@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.projectowner.ActivityCreateProject">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/actionbar_blue"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_done"
+        android:layout_below="@id/app_bar"
+        android:background="@color/reg_bg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/reg_bg">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_10"
+                android:background="@color/white"
+                app:cardElevation="@dimen/txt_2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:paddingLeft="@dimen/dimen_5"
+                    android:paddingRight="@dimen/dimen_5"
+                    android:paddingTop="@dimen/dimen_10">
+
+                    <android.support.design.widget.TextInputLayout
+
+                        android:id="@+id/layout_client_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/profession_layout"
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edt_client_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name"
+                            android:singleLine="true"
+                            android:textColor="@color/txt_header1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_client_name"
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edt_mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Mobile"
+                            android:singleLine="true"
+                            android:textColor="@color/txt_header1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_mobile"
+
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edt_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:singleLine="true"
+                            android:textColor="@color/txt_header1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/gender_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_email"
+                        android:layout_marginBottom="@dimen/dimen_10"
+                       >
+
+                        <TextView
+                            android:id="@+id/label_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dimen_5"
+                            android:paddingLeft="@dimen/dimen_7"
+                            android:text="Gender"
+                            android:textColor="@color/txt_header2"
+                            android:textSize="@dimen/txt_15" />
+                        
+                        <RadioGroup
+                            android:id="@+id/gender_radio_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/label_gender"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/gender_male"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Male"
+                                android:layout_marginRight="@dimen/dimen_15"/>
+
+
+                            <RadioButton
+                                android:id="@+id/gender_female"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Female"/>
+
+                        </RadioGroup>
+
+
+                    </RelativeLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/gender_layout"
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edt_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Address"
+                            android:singleLine="true"
+                            android:textColor="@color/txt_header1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/layout_country"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_address">
+
+                        <TextView
+                            android:id="@+id/label_country"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dimen_5"
+                            android:paddingLeft="@dimen/dimen_7"
+                            android:text="Country"
+                            android:textColor="@color/txt_header2"
+                            android:textSize="@dimen/txt_15" />
+
+                        <Spinner
+                            android:id="@+id/spinner_country"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/label_country"
+                            android:layout_marginBottom="@dimen/dimen_10"
+                            android:prompt="@string/changepassword" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/adress_type_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_country"
+                        android:layout_marginBottom="@dimen/dimen_10"
+                        >
+
+                        <TextView
+                            android:id="@+id/label_adress_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dimen_5"
+                            android:paddingLeft="@dimen/dimen_7"
+                            android:text="Address Type"
+                            android:textColor="@color/txt_header2"
+                            android:textSize="@dimen/txt_15" />
+
+                        <RadioGroup
+                            android:id="@+id/gender_address_type_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/label_adress_type"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/adress_home"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Home"
+                                android:layout_marginRight="@dimen/dimen_15"/>
+
+
+                            <RadioButton
+                                android:id="@+id/address_office"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Office"/>
+
+                        </RadioGroup>
+
+
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_10"
+                android:layout_below="@id/card1"
+                android:background="@color/white"
+                app:cardElevation="@dimen/txt_2">
+
+                <RelativeLayout
+                    android:id="@+id/alternative_contact_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dimen_5"
+                    android:paddingRight="@dimen/dimen_5"
+                    android:paddingTop="@dimen/dimen_10"
+                    android:layout_marginBottom="@dimen/dimen_10">
+
+                    <TextView
+                        android:id="@+id/label_alternartive_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_10"
+                        android:paddingLeft="@dimen/dimen_7"
+                        android:text="ALTERNATIVE CONTACT (Optional)"
+                        android:textColor="@color/txt_header2"
+                        android:textSize="@dimen/txt_15" />
+
+
+                    <android.support.design.widget.TextInputLayout
+
+                        android:id="@+id/layout_client_name_optional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/label_alternartive_contact"
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edt_client_name_optional"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name"
+                            android:singleLine="true"
+                            android:textColor="@color/txt_header1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_mobile_optional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_client_name_optional"
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edt_mobile_optional"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Mobile"
+                            android:singleLine="true"
+                            android:textColor="@color/txt_header1" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/login_button_bg"
+        android:text="@string/subscribe"
+        android:textColor="@color/login_text_color" />
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.registration.ActivityRegistration">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/reg_bg"
+        android:layout_height="match_parent">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
+            android:id="@+id/appbar"
+            android:layout_height="@dimen/dimen_175">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:id="@+id/toolbar"
+                app:layout_scrollFlags="enterAlways"
+                android:layout_height="?attr/actionBarSize">
+
+            </android.support.v7.widget.Toolbar>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/registeras"
+                    android:layout_gravity="center"
+                    android:textColor="@color/what_do_you_want_to_register_text_color"
+                    android:layout_height="wrap_content" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/profile_image"
+                                android:layout_width="wrap_content"
+                                android:background="@drawable/reg_img_bg"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/client_registeration"/>
+
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/project_owner"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:src="@mipmap/owner_registeration"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/client"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:src="@mipmap/team_registeration"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/coworker"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appbar"
+            android:layout_above="@+id/register"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    app:cardElevation="@dimen/txt_2"
+                    app:cardUseCompatPadding="true"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:layout_marginLeft="@dimen/dimen_8"
+                    android:layout_marginRight="@dimen/dimen_8"
+                    android:layout_marginBottom="@dimen/dimen_5"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/dimen_5"
+                        android:layout_marginRight="@dimen/dimen_5"
+                        android:layout_height="match_parent">
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:theme="@style/RegEditTextTheme"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/name"
+                                android:inputType="textNoSuggestions"
+                                android:imeOptions="actionNext"
+                                android:hint="@string/name"
+                                android:singleLine="true"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:theme="@style/RegEditTextTheme"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/companyname"
+                                android:inputType="textNoSuggestions"
+                                android:imeOptions="actionNext"
+                                android:hint="@string/companyname"
+                                android:singleLine="true"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:id="@+id/country"
+                            android:layout_height="wrap_content">
+
+                        </Spinner>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:theme="@style/RegEditTextTheme"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/mono"
+                                android:inputType="number"
+                                android:imeOptions="actionNext"
+                                android:hint="@string/mobileno"
+                                android:singleLine="true"
+                                android:maxLength="10"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:theme="@style/RegEditTextTheme"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/emailid"
+                                android:inputType="textEmailAddress"
+                                android:imeOptions="actionNext"
+                                android:hint="@string/email"
+                                android:singleLine="true"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:theme="@style/RegEditTextTheme"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/password"
+                                android:inputType="textPassword"
+                                android:imeOptions="actionNext"
+                                android:singleLine="true"
+                                android:hint="@string/password"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:theme="@style/RegEditTextTheme"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/confirmpass"
+                                android:inputType="textPassword"
+                                android:imeOptions="actionNext"
+                                android:singleLine="true"
+                                android:hint="@string/confirmpass"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:theme="@style/RegEditTextTheme"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/salescode"
+                                android:inputType="number"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:maxLength="10"
+                                android:hint="@string/salescode"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:id="@+id/tandc"
+                            android:layout_marginTop="@dimen/dimen_10"
+                            android:layout_marginLeft="@dimen/dimen_5"
+                            android:layout_marginRight="@dimen/dimen_5"
+                            android:layout_marginBottom="@dimen/dimen_10"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:text="@string/register"
+            android:textAllCaps="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/login_text_color"
+            android:id="@+id/register"
+            android:background="@color/login_button_bg"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

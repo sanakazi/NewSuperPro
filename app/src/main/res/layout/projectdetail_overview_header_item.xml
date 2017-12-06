@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:elevation="3dp"
+        android:layout_margin="@dimen/dimen_3"
+        card_view:cardCornerRadius="@dimen/dimen_0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_5"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:id="@+id/l1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/label_project_type"
+                    android:text="PROJECT TYPE:"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/label_size"
+                    android:textColor="@color/txt_header2"
+                    android:layout_marginRight="@dimen/dimen_10"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_project_type"
+                    android:text="Commercial"
+                    android:textAllCaps="true"
+                    android:textColor="@color/txt_header1"
+                    android:textSize="@dimen/label_size"
+
+                    />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/l2"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_10"
+                >
+
+                <com.superapp.custom.CircularNetworkImageView
+                    android:id="@+id/client_img"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_alignTop="@id/l2_l1"
+                    android:layout_alignBottom="@id/l2_l1"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    android:padding="@dimen/dimen_5"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/client_img"
+                    android:orientation="horizontal"
+                    android:id="@+id/l2_l1"
+                    android:layout_marginLeft="@dimen/dimen_5">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/l1_l1_l1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_clientName"
+                            android:text="Mr. Robert Pinto"
+                            android:textColor="@color/txt_header1"
+                            android:textSize="@dimen/txt_15"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/label_clientName"
+                            android:textAllCaps="true"
+                            android:text="CLIENT"
+                            android:textSize="@dimen/label_size"
+                            android:textColor="@color/txt_header2"/>
+
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/call"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/l2_l1"
+                    android:layout_alignLeft="@id/l2_l1">
+
+                    <ImageView
+                        android:paddingTop="@dimen/dimen_2"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/address"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="4"
+                        android:minLines="2"
+                        android:id="@+id/txt_client_address"
+                        android:text="5th Floor,Tech Web Center,New Link Road, Behram Baug,Jogeshwari(W), Mumbai - 400102"
+                        android:textSize="@dimen/label_size"
+                        android:textColor="@color/txt_header2"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/l3"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_10"
+                >
+
+                <RelativeLayout
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/l3_l1">
+
+                    <com.superapp.custom.CircularTextView
+                        android:id="@+id/circularTextView1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:text="22nd"
+                        android:padding="@dimen/dimen_10"
+                        android:textSize="@dimen/txt_12"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/circularTextView1"
+                        android:orientation="vertical"
+                        android:id="@+id/layout2_l1_l1"
+                        android:layout_marginLeft="@dimen/dimen_5"
+                        android:layout_alignTop="@+id/circularTextView1"
+                        android:layout_alignBottom="@+id/circularTextView1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/label_start_date"
+                            android:textAllCaps="true"
+                            android:text="START DATE"
+                            android:textSize="@dimen/txt_12"
+                            android:textColor="@color/txt_header2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_start_date"
+                            android:text="Nov, 2017"
+                            android:textSize="@dimen/txt_12"
+                            android:textColor="@color/txt_header1"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/layout2_l2">
+
+                    <com.superapp.custom.CircularTextView
+                        android:id="@+id/circularTextView2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:text="3rd"
+                        android:padding="@dimen/dimen_10"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/txt_12"
+                        android:gravity="center"
+
+                        />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/circularTextView2"
+                        android:orientation="vertical"
+                        android:id="@+id/layout2_l2_l1"
+                        android:layout_alignTop="@+id/circularTextView2"
+                        android:layout_alignBottom="@+id/circularTextView2"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_5">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/label_project_status"
+                            android:textAllCaps="true"
+                            android:text="HANDOVER DATE"
+                            android:textSize="@dimen/txt_12"
+                            android:textColor="@color/txt_header2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_project_status"
+                            android:textSize="@dimen/txt_12"
+                            android:text="March,2017"
+                            android:textColor="@color/txt_header1"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/l4"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_10"
+                >
+
+                <RelativeLayout
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/l4_l1">
+
+                    <com.superapp.custom.CircularTextView
+                        android:id="@+id/circularTextView3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:text="₹"
+                        android:padding="@dimen/dimen_10"
+                        android:textSize="@dimen/txt_12"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/circularTextView3"
+                        android:orientation="vertical"
+                        android:id="@+id/l4_l1_l1"
+                        android:layout_marginLeft="@dimen/dimen_5"
+                        android:layout_alignTop="@+id/circularTextView3"
+                        android:layout_alignBottom="@+id/circularTextView3"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/label_budget"
+                            android:textAllCaps="true"
+                            android:text="START DATE"
+                            android:textSize="@dimen/txt_12"
+                            android:textColor="@color/txt_header2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_budget"
+                            android:text="Nov, 2017"
+                            android:textSize="@dimen/txt_12"
+                            android:textColor="@color/txt_header1"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/l4_l2">
+
+                    <com.superapp.custom.CircularTextView
+                        android:id="@+id/circularTextView4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:text="100%"
+                        android:padding="@dimen/dimen_10"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/txt_12"
+                        android:gravity="center"
+
+                        />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/circularTextView4"
+                        android:orientation="vertical"
+                        android:id="@+id/l4_l2_l1"
+                        android:layout_alignTop="@+id/circularTextView4"
+                        android:layout_alignBottom="@+id/circularTextView4"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_5">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/label_handover_status"
+                            android:textAllCaps="true"
+                            android:text="HANDOVER DATE"
+                            android:textSize="@dimen/txt_12"
+                            android:textColor="@color/txt_header2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_handover_status"
+                            android:textSize="@dimen/txt_12"
+                            android:text="March,2017"
+                            android:textColor="@color/project_completed_status"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/l5"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assigned to "
+                    android:textSize="@dimen/label_size"
+                    android:textColor="@color/txt_header2"
+                    android:layout_marginRight="@dimen/dimen_5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chnadrakant Sawant "
+                    android:textColor="@color/font_blue"
+                    android:textSize="@dimen/label_size"
+                    android:layout_marginRight="@dimen/dimen_5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:textColor="@color/txt_header2"
+                    android:textSize="@dimen/label_size"
+                    android:layout_marginRight="@dimen/dimen_5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 Others "
+                    android:textColor="@color/font_blue"
+                    android:textSize="@dimen/label_size"
+                    android:layout_marginRight="@dimen/dimen_5"/>
+            </LinearLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

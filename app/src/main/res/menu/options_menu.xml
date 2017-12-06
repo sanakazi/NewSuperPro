@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu1"
+        android:title="Add Task"
+        android:icon="@mipmap/add_task_contextual"/>
+
+    <item
+        android:id="@+id/menu2"
+        android:title="Edit Project"
+        android:icon="@mipmap/edit_project_contextual"/>
+
+    <item
+        android:id="@+id/menu3"
+        android:title="Communication"
+        android:icon="@mipmap/communication_contextual"/>
+
+    <item
+        android:id="@+id/menu4"
+        android:title="Appointment"
+        android:icon="@mipmap/appointment_contextual"/>
+
+    <item
+        android:id="@+id/menu5"
+        android:title="Transaction"
+        android:icon="@mipmap/transaction_contextual"/>
+
+    <item
+        android:id="@+id/menu6"
+        android:title="Client Profile"
+        android:icon="@mipmap/client_profile_contextual"/>
+
+
+    <item
+        android:id="@+id/menu7"
+        android:title="Notepad"
+        android:icon="@mipmap/notepad"/>
+
+    <item
+        android:id="@+id/menu8"
+        android:title="Reminder"
+        android:icon="@mipmap/reminder_contextual"/>
+
+    <item
+        android:id="@+id/menu9"
+        android:title="Supervisor Access"
+        android:icon="@mipmap/supervisor_contextual"/>
+
+    <item
+        android:id="@+id/menu10"
+        android:title="Delete"
+        android:icon="@mipmap/delete_contextual"/>
+
+
+
+</menu>

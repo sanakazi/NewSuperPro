@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/nav_item1"
+    android:gravity="center"
+    android:background="@color/navigation_blue_bg"
+   >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dimen_5"
+        android:paddingBottom="@dimen/dimen_5"
+        android:paddingLeft="@dimen/dimen_5"
+        android:paddingRight="@dimen/dimen_5"
+       >
+
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/img"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp"
+        android:textSize="@dimen/txt_15"
+        android:text="Medium Text"
+        android:textColor="@color/white"
+        android:id="@+id/txt_main" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:id="@+id/main_l"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+
+
+        <ImageView
+            android:visibility="invisible"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+
+        <TextView
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="12dp"
+            android:paddingTop="4dp"
+            android:textSize="@dimen/txt_12"
+            android:gravity="center_vertical"
+            android:text="Edit Profile"
+            android:textColor="@color/white"
+            android:id="@+id/rowText1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <ImageView
+            android:visibility="invisible"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+
+        <TextView
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingTop="4dp"
+            android:textSize="@dimen/txt_12"
+            android:text="Upgrade Membership"
+            android:textColor="@color/white"
+            android:id="@+id/rowText2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <ImageView
+            android:visibility="invisible"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+
+        <TextView
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingTop="4dp"
+            android:textSize="@dimen/txt_12"
+            android:text="Check for Updates"
+            android:textColor="@color/white"
+            android:id="@+id/rowText3" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+    <View
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="@dimen/dimen_5"
+        android:layout_marginRight="@dimen/dimen_5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/navigation_blue_divider"/>
+
+</LinearLayout>

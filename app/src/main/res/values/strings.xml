@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">New Superapp Pro</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <!--  old app strings-->
+    <string name="uploadImage">Upload image</string>
+    <array name="pickerArray">
+        <item>Camera</item>
+        <item>Gallery</item>
+    </array>
+    <string name="storagePermissionNotGranted">Please allow SuperApp to access your storage from setting.</string>
+    <string name="error500">Got 500 Error, please try again</string>
+    <string name="error">Please try again after some time.</string>
+
+
+    <!-- Login and registration screens-->
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgotpass">Forgot Password?</string>
+    <string name="newtoapp">Are you new to the App? </string>
+    <string name="registernow">" Register Now!"</string>
+    <string name="registeras">What do you want to register as?</string>
+    <string name="tandc">By registering. I accept Super App Pro\'s <![CDATA[<b><font color=#046cbd>Terms of Service</font></b>]]> and <![CDATA[<b><font color=#046cbd>Privacy Policy</font></b>]]></string>
+    <string name="changepassword">Change Password</string>
+    <string name="name">Name</string>
+    <string name="companyname">Company name</string>
+    <string name="mobileno">Mobile No.</string>
+    <string name="email">Email id</string>
+    <string name="confirmpass">Confirm Password</string>
+    <string name="salescode">Sales Code(Optional)</string>
+    <string name="register">Register</string>
+    <string name="project_owner">PROJECT OWNER</string>
+    <string name="client">CLIENT</string>
+    <string name="coworker">CO-WORKER</string>
+    <string name="forget_pass_string">Enter your email below to receive your password reset instructions</string>
+    <string name="forgetbutton">SEND</string>
+    <string name="newpassword">Enter New Password</string>
+    <string name="submit">SUBMIT</string>
+    <string name="freesubscription">Free Subscription</string>
+    <string name="rupees">\u20B9499</string>
+    <string name="subscribe">SUBSCRIBE</string>
+    <string name="alreadyreg">ALREADY REGISTERED?</string>
+    <string name="alreadyreg_login">" LOGIN"</string>
+</resources>

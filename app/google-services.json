@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "833260851621",
+    "firebase_url": "https://newsuperpro.firebaseio.com",
+    "project_id": "newsuperpro",
+    "storage_bucket": "newsuperpro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833260851621:android:d39417f88aaca1da",
+        "android_client_info": {
+          "package_name": "com.superapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833260851621-fhh7fimq61df6g8ioha8rai1hqcgufsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKtCSrAalprX-pyDMDqOgs-Mn2GEPl97U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/project_layout"
+  >
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:elevation="3dp"
+        android:layout_margin="@dimen/dimen_3"
+        card_view:cardCornerRadius="@dimen/dimen_0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_5"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/layout1"
+           >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_project_name"
+                android:text="Conservation Hall"
+                android:textColor="#333333"
+                android:textSize="@dimen/txt_18"/>
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_project_owner"
+                android:src="@drawable/user"
+                android:tint="@color/black"
+                android:layout_below="@id/txt_project_name"
+                android:layout_alignBottom="@id/txt_project_owner"
+                android:layout_marginRight="@dimen/dimen_5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_project_owner"
+                android:layout_below="@id/txt_project_name"
+                android:layout_toRightOf="@id/img_project_owner"
+                android:layout_marginRight="@dimen/dimen_5"
+                android:text="Project Owner"
+                android:textSize="@dimen/txt_12"
+                android:textAllCaps="true"
+                android:textColor="#666666"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_10"
+                android:id="@+id/edit"
+                android:src="@mipmap/contextualmenu_card"
+                android:tint="@color/txt_header2"
+               android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:id="@+id/layout2"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout2_l1">
+
+                <com.superapp.custom.CircularTextView
+                    android:id="@+id/circularTextView1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:text="22nd"
+                    android:padding="@dimen/dimen_10"
+                    android:textSize="@dimen/txt_12"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+
+                   />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/circularTextView1"
+                    android:orientation="vertical"
+                    android:id="@+id/layout2_l1_l1"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    android:layout_alignTop="@+id/circularTextView1"
+                    android:layout_alignBottom="@+id/circularTextView1"
+                    android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/label_handover_date"
+                            android:textAllCaps="true"
+                            android:text="HANDOVER DATE"
+                            android:textSize="@dimen/txt_12"
+                            android:textColor="@color/txt_header2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_handover_date"
+                        android:text="Nov, 2017"
+                        android:textSize="@dimen/txt_12"
+                        android:textColor="@color/txt_header1"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout2_l2">
+
+                <com.superapp.custom.CircularTextView
+                    android:id="@+id/circularTextView2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:text="100%"
+                    android:padding="@dimen/dimen_10"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_12"
+                    android:gravity="center"
+
+                   />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/circularTextView2"
+                    android:orientation="vertical"
+                    android:id="@+id/layout2_l2_l1"
+                    android:layout_alignTop="@+id/circularTextView2"
+                    android:layout_alignBottom="@+id/circularTextView2"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_5">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/label_project_status"
+                        android:textAllCaps="true"
+                        android:text="PROJECT STATUS"
+                        android:textSize="@dimen/txt_12"
+                        android:textColor="@color/txt_header2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_project_status"
+                        android:textSize="@dimen/txt_12"
+                        android:text="Completed"
+                        android:textColor="@color/project_completed_status"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/layout3"
+          >
+
+            <com.superapp.custom.CircularNetworkImageView
+                android:id="@+id/img_client"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+               android:src="@mipmap/ic_launcher"
+                android:layout_alignTop="@id/layout3_l1"
+                android:layout_alignBottom="@id/layout3_l1"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:padding="@dimen/dimen_5"
+               />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/img_client"
+                android:orientation="vertical"
+                android:id="@+id/layout3_l1"
+                android:layout_marginLeft="@dimen/dimen_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_client_name"
+                    android:text="Mr. Robert Pinto"
+                    android:textColor="@color/txt_header1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/label_client_name"
+                    android:textAllCaps="true"
+                    android:text="CLIENT"
+                    android:textColor="@color/txt_header2"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
