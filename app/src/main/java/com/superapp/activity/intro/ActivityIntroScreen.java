@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.superapp.R;
-import com.superapp.activity.ActivityLogin;
+import com.superapp.activity.login.ActivityLogin;
 import com.superapp.activity.registration.ActivityRegistration;
 import com.superapp.custom.AutoScrollViewPager;
 import com.superapp.custom.CirclePageIndicator;

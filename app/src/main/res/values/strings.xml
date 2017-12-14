@@ -47,4 +47,48 @@
     <string name="subscribe">SUBSCRIBE</string>
     <string name="alreadyreg">ALREADY REGISTERED?</string>
     <string name="alreadyreg_login">" LOGIN"</string>
+    <string name="requiredMobileNo">Please Enter Mobile No.</string>
+    <string name="invalidMobileNo">Please Enter Valid Mobile No.</string>
+    <string name="requiredPassword">Please Enter Password</string>
+    <string name="registration">Registration</string>
+    <string name="requiredName">Please Enter Your Name</string>
+    <string name="company_name">Please Enter Company Name</string>
+    <string name="emailid">Please Enter Valid Email Id</string>
+    <string name="noMatchPassword">Your password and confirmation password do not match</string>
+    <string name="forgetpass">Forgot password</string>
+    <string name="forgotpassvalidation">Please Enter Username</string>
+    <string name="otpstring">We have sent an OTP on your number</string>
+    <string name="notreceivecode">Didn\'t receive the verification code?</string>
+    <string name="resendcode">" Resend Code"</string>
+    <string name="verify">VERIFY</string>
+    <string name="verified">Verified!</string>
+    <string name="verified_success">Your number has been successfully verified!</string>
+    <string name="ok">OK</string>
+    <string name="enterotp">Please Enter OTP</string>
+    <string name="invalidotp">Invalid OTP</string>
+    <string name="verification">Verification</string>
+    <string name="confirmpassword">Enter Confirm Password</string>
+    <string name="available_balance">Available Balance</string>
+    <string name="filter">Filter</string>
+    <string name="accept">ACCEPT</string>
+    <string name="reject">REJECT</string>
+    <string name="requestedamt">Requested Amount</string>
+
+
+    <string name="communication">Communication</string>
+    <string name="description">Description</string>
+    <string name="material">Material</string>
+    <string name="team">TEAM</string>
+    <string name="addcomment">Add Comments</string>
+    <string name="status">Status</string>
+    <string name="update">UPDATE</string>
+    <string name="taskname">Task Name</string>
+    <string name="categories">Select Category</string>
+    <string name="subcategories">Select Sub-Category</string>
+    <string name="title">Title</string>
+    <string name="allnotes">All Notes</string>
+    <string name="done">DONE</string>
+    <string name="notes">Notes</string>
+    <string name="sketch">Sketch</string>
+
 </resources>

@@ -18,21 +18,12 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".activity.ActivitySplash"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
+            android:theme="@style/SplashTheme" />
         <activity
             android:name=".activity.intro.ActivityIntroScreen"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -51,27 +42,39 @@
         </activity>
         <activity
             android:name=".activity.registration.ActivityRegistration"
+            android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateVisible|adjustResize" />
+            android:theme="@style/Theme" />
         <activity
-            android:name=".activity.ActivityLogin"
+            android:name=".activity.login.ActivityLogin"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme" />
         <activity
-            android:name=".activity.ActivityForgotPassword"
+            android:name=".activity.login.ActivityChangePassword"
+            android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.login.ActivityVerification"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.login.ActivityForgotPassword"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme"
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".activity.subscription.ActivitySubscription" />
         <activity android:name=".activity.subscription.ActivitySubscriptionDetail" />
         <activity
-            android:name=".activity.projectowner.ProjectDetailActivity"
+            android:name=".activity.projectowner.ActivityProjectDetail"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".activity.projectowner.MilestoneActivity"
+            android:name=".activity.projectowner.ActivityMilestone"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
@@ -82,11 +85,114 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".activity.projectowner.ActivityAddClient"
+        <activity
+            android:name=".activity.projectowner.ActivityAddClient"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.contextualmenus.appointment.ActivityAppointment"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.contextualmenus.appointment.ActivityScheduleAppointment"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.contextualmenus.ActivitySelectTeam"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.contextualmenus.task.ActivityCreateTask"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".activity.projectowner.ActivityTaskOverview" />
+        <activity
+            android:name=".activity.contextualmenus.transaction.ActivityClientTransaction"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.contextualmenus.transaction.ActivityRequestAmtDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.contextualmenus.transaction.ActivityExpenseAmtDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+
+        <!-- for client -->
+
+        <activity
+            android:name=".activity.client.dashboard.ActivityMainClient"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".activity.client.projectoverview.ActivityProjectOverviewClient" />
+        <activity android:name=".activity.team.projectoverview.ActivityProjectOverviewTeam" />
+        <activity android:name=".activity.contextualmenus.clientprofile.ActivityClientProfile" />
+        <activity android:name=".activity.sidemenu.ActivityAllProjects" />
+        <activity
+            android:name=".activity.contextualmenus.communication.ActivityCommunication"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.ActivityNotification"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.team.projectoverview.ActivityTeamTaskStatus"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.team.projectoverview.ActivityTeamTaskUpdate"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.contextualmenus.communication.ActivityClientApprovalDetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.contextualmenus.communication.ActivityClarificationAddRequest"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.contextualmenus.notepad.ActivityNotepadLandingScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme" />
+        <activity
+            android:name=".activity.contextualmenus.notepad.ActivityCreateNewNotepad"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.contextualmenus.notepad.ActivitySketch"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activity.sidemenu.ActivityEditProfile" />
+        <activity android:name=".activity.contextualmenus.clientprofile.ActivityEditClientProfile" />
+        <activity android:name=".activity.sidemenu.ActivityFeedback"></activity>
     </application>
 
 </manifest>

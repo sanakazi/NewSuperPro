@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".activity.registration.ActivityRegistration">
 
     <RelativeLayout
@@ -16,13 +17,12 @@
             android:layout_width="match_parent"
             android:fitsSystemWindows="true"
             android:id="@+id/appbar"
-            android:layout_height="@dimen/dimen_175">
+            android:layout_height="@dimen/dimen_200">
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:id="@+id/toolbar"
-                app:layout_scrollFlags="enterAlways"
-                android:layout_height="?attr/actionBarSize">
+                android:layout_height="wrap_content">
 
             </android.support.v7.widget.Toolbar>
 
@@ -54,18 +54,12 @@
                         android:gravity="center"
                         android:layout_height="wrap_content">
 
-                        <FrameLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
 
                             <ImageView
-                                android:id="@+id/profile_image"
+                                android:id="@+id/owner"
                                 android:layout_width="wrap_content"
-                                android:background="@drawable/reg_img_bg"
                                 android:layout_height="wrap_content"
-                                android:src="@mipmap/client_registeration"/>
-
-                        </FrameLayout>
+                                android:src="@mipmap/owner_registeration"/>
 
 
                         <TextView
@@ -73,6 +67,7 @@
                             android:text="@string/project_owner"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:layout_marginTop="@dimen/dimen_5"
                             android:textColor="@android:color/white"
                             android:layout_height="wrap_content" />
 
@@ -88,15 +83,17 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:src="@mipmap/owner_registeration"
+                            android:src="@mipmap/project_owner"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:id="@+id/client"
                             android:layout_height="wrap_content" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:text="@string/client"
                             android:layout_weight="1"
+                            android:layout_marginTop="@dimen/dimen_5"
                             android:gravity="center"
                             android:textColor="@android:color/white"
                             android:layout_height="wrap_content" />
@@ -113,15 +110,17 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:src="@mipmap/team_registeration"
+                            android:src="@mipmap/co_worker"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:id="@+id/coworker"
                             android:layout_height="wrap_content" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:text="@string/coworker"
                             android:layout_weight="1"
+                            android:layout_marginTop="@dimen/dimen_5"
                             android:gravity="center"
                             android:textColor="@android:color/white"
                             android:layout_height="wrap_content" />
@@ -150,6 +149,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:layout_height="wrap_content">
 
 
@@ -169,11 +170,15 @@
                         android:orientation="vertical"
                         android:layout_marginLeft="@dimen/dimen_5"
                         android:layout_marginRight="@dimen/dimen_5"
+                        android:layout_marginTop="@dimen/dimen_10"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
                         android:layout_height="match_parent">
 
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
+                            android:id="@+id/textinputname"
                             android:theme="@style/RegEditTextTheme"
                             android:layout_height="wrap_content">
 
@@ -191,6 +196,7 @@
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
+                            android:id="@+id/textinputcompanyname"
                             android:theme="@style/RegEditTextTheme"
                             android:layout_height="wrap_content">
 
@@ -214,6 +220,7 @@
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
+                            android:id="@+id/textinputmono"
                             android:theme="@style/RegEditTextTheme"
                             android:layout_height="wrap_content">
 
@@ -231,6 +238,7 @@
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
+                            android:id="@+id/textinputemailid"
                             android:theme="@style/RegEditTextTheme"
                             android:layout_height="wrap_content">
 
@@ -247,6 +255,7 @@
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
+                            android:id="@+id/textinputpassword"
                             android:theme="@style/RegEditTextTheme"
                             android:layout_height="wrap_content">
 
@@ -264,6 +273,7 @@
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
+                            android:id="@+id/textinputconfirmpassword"
                             android:theme="@style/RegEditTextTheme"
                             android:layout_height="wrap_content">
 

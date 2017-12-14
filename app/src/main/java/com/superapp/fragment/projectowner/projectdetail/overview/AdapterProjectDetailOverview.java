@@ -50,7 +50,7 @@ public class AdapterProjectDetailOverview extends RecyclerView.Adapter<AdapterPr
         return vhItem;}
         else if (viewType == TYPE_HEADER) {
 
-            View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.projectdetail_overview_header_item, null);
+            View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.label, null);
 
             SingleItemRowHolder vhHeader = new SingleItemRowHolder(v, viewType);
             return vhHeader;
@@ -75,14 +75,6 @@ public class AdapterProjectDetailOverview extends RecyclerView.Adapter<AdapterPr
         });*/
         if (holder.Holderid == 1) {
 
-            if(i==1)
-            {
-                holder.label.setVisibility(View.VISIBLE);
-            }
-            else
-            {
-                holder.label.setVisibility(View.GONE);
-            }
 
         }
         else
@@ -112,7 +104,7 @@ public class AdapterProjectDetailOverview extends RecyclerView.Adapter<AdapterPr
     public class SingleItemRowHolder extends RecyclerView.ViewHolder {
         int Holderid;
         protected RelativeLayout project_layout;
-        protected TextView label;
+      //  protected TextView label;
         CircularTextView circularTextView1, circularTextView2, circularTextView3, circularTextView4;
 
 
@@ -135,33 +127,13 @@ public class AdapterProjectDetailOverview extends RecyclerView.Adapter<AdapterPr
                 circularTextView3.setStrokeColor("#ffffff");
                 circularTextView3.setSolidColor("#2cac1e");
 
-                label = itemView.findViewById(R.id.label);
 
                  Holderid=1;
 
             }
             else
             {
-                circularTextView1 = itemView.findViewById(R.id.circularTextView1);
-                circularTextView2 = itemView.findViewById(R.id.circularTextView2);
-                circularTextView3 = itemView.findViewById(R.id.circularTextView3);
-                circularTextView4 = itemView.findViewById(R.id.circularTextView4);
 
-                circularTextView1.setStrokeWidth(1);
-                circularTextView1.setStrokeColor("#ffffff");
-                circularTextView1.setSolidColor("#3fb5d2");
-
-                circularTextView2.setStrokeWidth(1);
-                circularTextView2.setStrokeColor("#ffffff");
-                circularTextView2.setSolidColor("#6d53ce");
-
-                circularTextView3.setStrokeWidth(1);
-                circularTextView3.setStrokeColor("#ffffff");
-                circularTextView3.setSolidColor("#046cbd");
-
-                circularTextView4.setStrokeWidth(1);
-                circularTextView4.setStrokeColor("#ffffff");
-                circularTextView4.setSolidColor("#23a915");
 
             }
 

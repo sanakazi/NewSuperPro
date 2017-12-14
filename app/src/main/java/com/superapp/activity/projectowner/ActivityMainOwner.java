@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,6 +28,10 @@ import android.widget.TextView;
 
 import com.superapp.R;
 import com.superapp.activity.base.BaseAppCompatActivity;
+import com.superapp.activity.sidemenu.ActivityAllProjects;
+import com.superapp.activity.sidemenu.ActivityEditProfile;
+import com.superapp.activity.sidemenu.ActivityFeedback;
+import com.superapp.custom.DividerItemDecoration;
 import com.superapp.fragment.projectowner.dashboard.clients.FragmentDashboardClient;
 import com.superapp.fragment.projectowner.dashboard.projects.FragmentDashboardProject;
 import com.superapp.fragment.projectowner.dashboard.team.FragmentDashboardTeam;
@@ -42,14 +47,14 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
     RecyclerView mRecyclerView;
     RecyclerView.Adapter mAdapter;
     DrawerLayout drawer;
-    public int row_index;
+    public int row_index = 1;
     Toolbar toolbar;
     public FloatingActionButton fab;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private static int expanded_item = 0;
-    final String TITLES[] = {"All Projects", "Settings", "Coach marks", "Share/Invite friends", "Rate us on Playstore", "Help & Support", "Feedback", "Legal", "Logout"};
-    final int IMAGES[] = {R.mipmap.all_projects_sidemenu, R.mipmap.settings_sidemenu, R.mipmap.coach_marks_sidemenu, R.mipmap.share_sidemenu, R.mipmap.rate_sidemenu, R.mipmap.help_sidemenu, R.mipmap.feedback_sidemenu, R.mipmap.legal_sidemenu, R.mipmap.logout_sidemenu};
+    final String TITLES[] = {"Home", "All Projects", "Settings", "Coach marks", "Share/Invite friends", "Rate us on Playstore", "Help & Support", "Feedback", "Legal", "Logout"};
+    final int IMAGES[] = {R.mipmap.all_projects_sidemenu, R.mipmap.all_projects_sidemenu, R.mipmap.settings_sidemenu, R.mipmap.coach_marks_sidemenu, R.mipmap.share_sidemenu, R.mipmap.rate_sidemenu, R.mipmap.help_sidemenu, R.mipmap.feedback_sidemenu, R.mipmap.legal_sidemenu, R.mipmap.logout_sidemenu};
     private int[] tabIcons = {
             R.mipmap.clients_tabbar,
             R.mipmap.projects_tabbar,
@@ -79,6 +84,11 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
        /* mRecyclerView.addItemDecoration(new SimpleDividerItemDecoration(
                 getApplicationContext()
         ));*/
+
+     /*   RecyclerView.ItemDecoration itemDecoration = new
+                DividerItemDecoration(ActivityMainOwner.this, DividerItemDecoration.VERTICAL_LIST);
+        mRecyclerView.addItemDecoration(itemDecoration);*/
+
         fab = (FloatingActionButton) findViewById(R.id.fab);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -119,6 +129,9 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                         mAdapter.notifyDataSetChanged();
                     }
                 }*/
+
+                row_index = 1;
+                mAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -133,7 +146,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
 
-        fab.setRippleColor(getResources().getColor(R.color.floatingButtonColor));
+        //  fab.setRippleColor(getResources().getColor(R.color.floatingButtonColor));
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,18 +157,18 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                 switch (viewPager.getCurrentItem()) {
 
                     case 0:
-                        intent  = new Intent(ActivityMainOwner.this, ActivityAddClient.class);
-                        intent.putExtra("from","Client");
+                        intent = new Intent(ActivityMainOwner.this, ActivityAddClient.class);
+                        intent.putExtra("from", "Client");
                         startActivity(intent);
                         break;
                     case 1:
-                        intent  = new Intent(ActivityMainOwner.this, ActivityCreateProject.class);
+                        intent = new Intent(ActivityMainOwner.this, ActivityCreateProject.class);
                         startActivity(intent);
 
                         break;
                     case 2:
-                        intent  = new Intent(ActivityMainOwner.this, ActivityAddClient.class);
-                        intent.putExtra("from","Team");
+                        intent = new Intent(ActivityMainOwner.this, ActivityAddClient.class);
+                        intent.putExtra("from", "Team");
                         startActivity(intent);
                         break;
                 }
@@ -213,29 +226,36 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
 
     public void onNavigationItemClick(int pos) {
 
-
+        Intent intent;
         //region switchcase
         switch (pos) {
+
             case 1:
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+                break;
+
+            case 2:
                 enableViews(false);
 
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.closeDrawer(GravityCompat.START);
                 }
+
+                intent = new Intent(ActivityMainOwner.this, ActivityAllProjects.class);
+                startActivity(intent);
+
+
              /*   HomeFragment homeFragment = (HomeFragment) getSupportFragmentManager().findFragmentByTag(HOME_FRAGMENT);
                 replaceFragment(homeFragment, HOME_FRAGMENT, true);*/
 
                 break;
 
-            case 2:
-                if (drawer.isDrawerOpen(GravityCompat.START)) {
-                    drawer.closeDrawer(GravityCompat.START);
-                    expanded_item = 0;
-                }
-                break;
             case 3:
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.closeDrawer(GravityCompat.START);
+                    expanded_item = 0;
                 }
                 break;
             case 4:
@@ -247,6 +267,19 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.closeDrawer(GravityCompat.START);
                 }
+                break;
+            case 6:
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+
+                break;
+            case 8:
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+                intent = new Intent(ActivityMainOwner.this, ActivityFeedback.class);
+                startActivity(intent);
                 break;
 
         }
@@ -305,6 +338,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
         private static final int TYPE_HEADER = 0;
         private static final int TYPE_ITEM = 1;
         private static final int TYPE_EXP_ITEM = 2;
+        private static final int TYPE_FOOTER = 3;
         private String mNavTitles[];
         private int mNavImages[];
 
@@ -315,12 +349,14 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
             TextView rowText, tvName, txt_main;
             public LinearLayout nav_item, nav_item1, main_l, ll_2, l1, l2, l3;
             ImageView img, ivGallery;
+            SwitchCompat coachmarks_switch;
             //  CircularNetworkImageView ivProfileImage;
 
             public ViewHolder(View itemView, int ViewType) {
                 super(itemView);
 
                 if (ViewType == TYPE_ITEM) {
+                    coachmarks_switch = itemView.findViewById(R.id.coachmarks_switch);
                     rowText = (TextView) itemView.findViewById(R.id.rowText);
                     nav_item = (LinearLayout) itemView.findViewById(R.id.nav_item);
                     img = itemView.findViewById(R.id.img);
@@ -334,6 +370,8 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                     l2 = itemView.findViewById(R.id.l2);
                     l3 = itemView.findViewById(R.id.l3);
                     Holderid = 2;
+                } else if (ViewType == TYPE_FOOTER) {
+                    Holderid = 3;
                 } else {
 
                     tvName = (TextView) itemView.findViewById(R.id.tvName);
@@ -379,6 +417,14 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                 return vhHeader;
 
 
+            } else if (viewType == TYPE_FOOTER) {
+
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.nav_item_footer, parent, false);
+
+                ViewHolder vhfooter = new ViewHolder(v, viewType);
+                return vhfooter;
+
+
             }
             return null;
 
@@ -389,6 +435,11 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, final int position) {
 
             if (holder.Holderid == 1) {
+
+                if (position == 4) {
+                    holder.coachmarks_switch.setVisibility(View.VISIBLE);
+                } else holder.coachmarks_switch.setVisibility(View.GONE);
+
                 holder.img.setImageResource(mNavImages[position - 1]);
                 holder.rowText.setText(mNavTitles[position - 1]);
                 holder.nav_item.setOnClickListener(new View.OnClickListener() {
@@ -402,10 +453,8 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                 });
 
                 if (row_index == position) {
-                    holder.nav_item.setBackgroundColor(Color.TRANSPARENT);
                     holder.rowText.setTextColor(Color.parseColor("#5a819e"));
                 } else {
-                    holder.nav_item.setBackgroundColor(Color.TRANSPARENT);
                     holder.rowText.setTextColor(Color.WHITE);
                 }
             } else if (holder.Holderid == 2) {
@@ -422,6 +471,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                         if (expanded_item == 0) {
                             holder.main_l.setVisibility(View.VISIBLE);
                             expanded_item = 1;
+                            holder.txt_main.setTextColor(getResources().getColor(R.color.selected_txt_color));
 
                             holder.l1.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -429,12 +479,10 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
 
                                     notifyDataSetChanged();
                                     if (row_index == position) {
-                                        // holder.l1.setBackgroundColor(Color.parseColor("#894b87"));
-                                        holder.l2.setBackgroundColor(Color.TRANSPARENT);
-                                    } else {
-                                        holder.l1.setBackgroundColor(Color.TRANSPARENT);
                                     }
-
+                                    holder.txt_main.setTextColor(getResources().getColor(R.color.white));
+                                    Intent intent = new Intent(ActivityMainOwner.this, ActivityEditProfile.class);
+                                    startActivity(intent);
                                     onNavigationItemClick(position);
                                 }
                             });
@@ -445,12 +493,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                                 public void onClick(View v) {
 
                                     notifyDataSetChanged();
-                                    if (row_index == position) {
-                                        holder.l2.setBackgroundColor(Color.TRANSPARENT);
-                                    } else {
-                                        holder.l2.setBackgroundColor(Color.TRANSPARENT);
-                                    }
-
+                                    holder.txt_main.setTextColor(getResources().getColor(R.color.white));
                                     onNavigationItemClick(position);
                                 }
                             });
@@ -461,12 +504,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                                 public void onClick(View v) {
 
                                     notifyDataSetChanged();
-                                    if (row_index == position) {
-                                        holder.l3.setBackgroundColor(Color.TRANSPARENT);
-                                    } else {
-                                        holder.l3.setBackgroundColor(Color.TRANSPARENT);
-                                    }
-
+                                    holder.txt_main.setTextColor(getResources().getColor(R.color.white));
                                     onNavigationItemClick(position);
                                 }
                             });
@@ -474,6 +512,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                         } else if (expanded_item == 1) {
                             holder.main_l.setVisibility(View.GONE);
                             expanded_item = 0;
+                            holder.txt_main.setTextColor(getResources().getColor(R.color.white));
                             notifyDataSetChanged();
                         }
 
@@ -487,7 +526,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return mNavTitles.length + 1; // the number of items in the list will be +1 the titles including the header view.
+            return mNavTitles.length + 2; // the number of items in the list will be +1 the titles including the header view.
         }
 
 
@@ -498,18 +537,28 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
             else if (position == 2) {
                 return TYPE_EXP_ITEM;
             } else return TYPE_ITEM;*/
-            switch (position) {
+           /* switch (position) {
                 case 0:
                     return TYPE_HEADER;
                 case 2:
                     return TYPE_EXP_ITEM;
+
             }
-            return 1;
+            return 1;*/
+
+            if (position == 0) {
+                return TYPE_HEADER;
+            } else if (position == 3) {
+                return TYPE_EXP_ITEM;
+            } else if (position == mNavTitles.length + 1) {
+                return TYPE_FOOTER;
+            } else {
+                return TYPE_ITEM;
+            }
+
+
         }
 
-        private boolean isPositionHeader(int position) {
-            return position == 0;
-        }
 
     }
 

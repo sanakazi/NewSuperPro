@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/project_layout"
+    tools:context=".activity.contextualmenus.task.ActivityCreateTask">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/actionbar_blue"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/app_bar"
+        android:background="@color/reg_bg">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/reg_bg">
+
+
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_10"
+                android:background="@color/white"
+                app:cardElevation="@dimen/txt_2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:paddingLeft="@dimen/dimen_5"
+                    android:paddingRight="@dimen/dimen_5"
+                    android:paddingTop="@dimen/dimen_10">
+
+                    <android.support.design.widget.TextInputLayout
+
+                        android:id="@+id/layout_task_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/profession_layout"
+                        android:textColorHint="@color/txt_header2"
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edt_task_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Task Name"
+                            android:paddingLeft="@dimen/dimen_8"
+                            android:singleLine="true"
+                            android:textColor="@color/txt_header1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:id="@+id/milestone_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                      android:layout_below="@id/layout_task_name"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_milestone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dimen_5"
+                            android:paddingLeft="@dimen/dimen_8"
+                            android:text="Milestone"
+                            android:textColor="@color/txt_header2"
+                            android:textSize="@dimen/label_size" />
+
+                        <Spinner
+                            android:id="@+id/spinner_milestone"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt_milestone"
+                            android:layout_marginBottom="@dimen/dimen_15"
+                            android:prompt="@string/changepassword" />
+
+                    </LinearLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/milestone_layout"
+                        android:textColorHint="@color/txt_header2"
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edt_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/dimen_8"
+                            android:hint="Kitchen"
+                            android:singleLine="true"
+                            android:textColor="@color/txt_header1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card2"
+                android:layout_margin="@dimen/dimen_10"
+                android:background="@color/white"
+                app:cardElevation="@dimen/dimen_2"
+                android:layout_below="@id/card1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:paddingLeft="@dimen/dimen_5"
+                    android:paddingRight="@dimen/dimen_5"
+                    android:paddingTop="@dimen/dimen_10">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/label_team_layout"
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <TextView
+                            android:id="@+id/label_add_team_member"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dimen_5"
+                            android:paddingLeft="@dimen/dimen_7"
+                            android:text="team member"
+                            android:textAllCaps="true"
+                            android:textColor="@color/txt_header2"
+                            android:textSize="@dimen/txt_12" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/add_createprojects"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dimen_10"
+                            android:padding="@dimen/dimen_5"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/layout_team"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/label_team_layout">
+
+                        <TextView
+                            android:id="@+id/label_team"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dimen_5"
+                            android:paddingLeft="@dimen/dimen_7"
+                            android:text="Assign task to"
+                            android:textColor="@color/txt_header2"
+                            android:textSize="@dimen/txt_12" />
+
+
+                        <ImageView
+                            android:id="@+id/select_team"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/right_arrow"
+                            android:layout_below="@id/label_team"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/dimen_10"
+                            android:padding="@dimen/dimen_5"
+                            />
+
+                        <TextView
+                            android:id="@+id/spinner_team"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Chandrkant_sawant"
+                            android:paddingLeft="@dimen/dimen_7"
+                            android:layout_below="@id/label_team"
+                            android:layout_marginBottom="@dimen/dimen_5"
+                            android:prompt="@string/changepassword"
+                            />
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="1dp"
+                            android:layout_below="@id/spinner_team"
+                            android:background="@color/txt_header2"
+                            android:layout_marginBottom="@dimen/dimen_10"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card3"
+                android:layout_margin="@dimen/dimen_10"
+                android:background="@color/white"
+                app:cardElevation="@dimen/dimen_2"
+                android:layout_below="@id/card2">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:paddingLeft="@dimen/dimen_5"
+                    android:paddingRight="@dimen/dimen_5"
+                    android:paddingTop="@dimen/dimen_10">
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/layout_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/label_upload"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:paddingLeft="@dimen/dimen_7"
+                            android:text="Material"
+                            android:textColor="@color/txt_header2"
+                            android:textSize="@dimen/txt_12" />
+
+
+
+                        <TextView
+                            android:id="@+id/spinner_upload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chandrkant_sawant"
+                            android:paddingLeft="@dimen/dimen_7"
+                            android:layout_below="@id/label_upload"
+                            android:layout_marginTop="@dimen/dimen_5"
+                            android:layout_marginBottom="@dimen/dimen_5"
+                            android:prompt="@string/changepassword"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_upload"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@mipmap/upload_icon"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/dimen_10"
+                            android:layout_marginBottom="@dimen/dimen_5"
+                            android:padding="@dimen/dimen_5"
+                            android:layout_below="@id/label_upload"
+                            />
+
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="1dp"
+                            android:layout_below="@id/select_upload"
+                            android:background="@color/txt_header2"
+                            android:layout_marginBottom="@dimen/dimen_10"
+                            />
+
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_view_list"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_below="@id/view"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/dimen_10"/>
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_start_dates"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/recycler_view_list"
+                            android:layout_marginBottom="@dimen/dimen_10"
+
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.6"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/label_date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/dimen_5"
+                                    android:paddingLeft="@dimen/dimen_8"
+                                    android:text="Start Date"
+                                    android:textColor="@color/txt_header2"
+                                    android:textSize="@dimen/label_size" />
+
+                                <Spinner
+                                    android:id="@+id/spinner_date"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/label_profession"
+                                    android:layout_marginBottom="@dimen/dimen_15"
+                                    android:prompt="@string/changepassword" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.4"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/label_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/dimen_5"
+                                    android:paddingLeft="@dimen/dimen_8"
+                                    android:text="Start Time"
+                                    android:textColor="@color/txt_header2"
+                                    android:textSize="@dimen/label_size" />
+
+                                <Spinner
+                                    android:id="@+id/spinner_time"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/label_profession"
+                                    android:layout_marginBottom="@dimen/dimen_15"
+                                    android:prompt="@string/changepassword" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_end_dates"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/layout_start_dates"
+                            android:layout_marginBottom="@dimen/dimen_10"
+
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.6"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/label_end_date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/dimen_5"
+                                    android:paddingLeft="@dimen/dimen_8"
+                                    android:text="End Date"
+                                    android:textColor="@color/txt_header2"
+                                    android:textSize="@dimen/label_size" />
+
+                                <Spinner
+                                    android:id="@+id/spinner_end_date"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/label_profession"
+                                    android:layout_marginBottom="@dimen/dimen_15"
+                                    android:prompt="@string/changepassword" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.4"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/label_end_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/dimen_5"
+                                    android:paddingLeft="@dimen/dimen_8"
+                                    android:text="End Time"
+                                    android:textColor="@color/txt_header2"
+                                    android:textSize="@dimen/label_size" />
+
+                                <Spinner
+                                    android:id="@+id/spinner_end_time"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/label_profession"
+                                    android:layout_marginBottom="@dimen/dimen_15"
+                                    android:prompt="@string/changepassword" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/layout_desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/layout_end_dates"
+                            android:textColorHint="@color/txt_header2"
+                            android:layout_marginBottom="@dimen/dimen_10">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/edt_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Description"
+                                android:paddingLeft="@dimen/dimen_8"
+                                android:singleLine="true"
+                                android:textColor="@color/txt_header1" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card3"
+                android:id="@+id/remind_layout"
+                android:layout_margin="@dimen/dimen_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remind me"
+                    android:textSize="@dimen/label_size"
+                    android:paddingLeft="@dimen/dimen_8"
+                    android:textColor="@color/txt_header2"/>
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/remind_layout"
+                android:background="@color/login_button_bg"
+                android:text="ADD TASK"
+                android:textAllCaps="true"
+                android:textColor="@color/login_text_color"
+               />
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/background_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/txt_header2"
+        android:alpha="0.4"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/upload_popover_layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:visibility="gone"
+        >
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/document_circle"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Document"
+                android:textColor="@color/txt_header2"
+                android:textSize="@dimen/txt_15"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/camera"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Camera"
+                android:textColor="@color/txt_header2"
+                android:textSize="@dimen/txt_15"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/photos"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Photos"
+                android:textColor="@color/txt_header2"
+                android:textSize="@dimen/txt_15"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

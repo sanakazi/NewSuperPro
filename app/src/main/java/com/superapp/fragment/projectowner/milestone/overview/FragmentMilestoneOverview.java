@@ -25,7 +25,7 @@ public class FragmentMilestoneOverview extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_projectdetail_overview, container, false);
+        View v = inflater.inflate(R.layout.fragment_milestone_overview, container, false);
         init(v);
         createData();
 

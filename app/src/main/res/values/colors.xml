@@ -71,20 +71,22 @@
     <color name="navigation_blue_headers">#6a96b6</color>
     <color name="navigation_blue_switch">#036cbd</color>
     <color name="navigation_blue_divider">#3a4e5d</color>
-    <color name = "actionbar_blue">#056bbd</color>
-    <color name = "tab_indicator_color">#fcd702</color>
+    <color name="actionbar_blue">#056bbd</color>
+    <color name="tab_indicator_color">#fcd702</color>
+    <color name="selected_txt_color">#7d8890</color>
 
 
     <!--ProjectDashboard fragment-->
-    <color name = "txt_header1">#333333</color>
-    <color name = "txt_header2">#666666</color>
-    <color name = "project_completed_status">#23a915</color>
-    <color name = "project_handover_status">#6d53ce</color>
+    <color name="txt_header1">#333333</color>
+    <color name="txt_header2">#666666</color>
+    <color name="project_completed_status">#23a915</color>
+    <color name="project_handover_status">#6d53ce</color>
 
     <color name="font_blue">#007aff</color>
 
 
-   <!-- Login and registration screens-->
+    <!-- Login and registration screens-->
+
 
     <color name="login_start_color">#046dbe</color>
     <color name="login_center_color">#0670be</color>
@@ -98,10 +100,30 @@
     <color name="reg_bg">#eeeeee</color>
     <color name="what_do_you_want_to_register_text_color">#cbe8ff</color>
     <color name="Reg_hint_color">#666666</color>
-    <color name="viewfeatures">#046cbd</color>
-    <color name="rupeetextcolor">#046cbd</color>
 
     <color name="reg_img_bg">#0a76ca</color>
     <color name="intro_login">#fcd605</color>
+
+
+    <!--Toolbar and status bar color-->
+    <color name="statusbar_color">#303F9F</color>
+    <color name="accent">#FF4081</color>
+    <color name="resendcolor">#1c76c4</color>
+    <color name="verifiedcolor">#222222</color>
+    <color name="available_balance">#8fceff</color>
+    <color name="requested_amt_rs_color">#f7af02</color>
+    <color name="accept_color">#4c3f00</color>
+    <color name="reject_bg">#bcb79e</color>
+
+
+    <!--    Team-->
+    <color name="team_startdate">#3fb5d2</color>
+
+    <color name="viewbg">#f1f1f1</color>
+    <color name="notepad_date_color">#888888</color>
+
+
+    <!--Edit profile screen-->
+    <color name="blue_text_color">#0460a8</color>
 
 </resources>

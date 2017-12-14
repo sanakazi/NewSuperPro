@@ -1,5 +1,6 @@
 package com.superapp.activity.projectowner;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -7,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ import java.util.List;
 public class ActivityCreateProject extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String TAG = ActivityCreateProject.class.getSimpleName();
     Toolbar toolbar;
+    ImageView btn_add_client;
     Spinner spinner_profession,spinner_startdate,spinner_handover_date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,8 @@ public class ActivityCreateProject extends AppCompatActivity implements AdapterV
 
         spinner_handover_date = findViewById(R.id.spinner_handover_date);
         spinner_handover_date.setOnItemSelectedListener(this);
+
+        btn_add_client = findViewById(R.id.btn_add_client);
 
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
@@ -81,7 +86,17 @@ public class ActivityCreateProject extends AppCompatActivity implements AdapterV
     }
 
 
-    private void setAsAction() {}
+    private void setAsAction() {
+
+        btn_add_client.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityCreateProject.this,ActivityAddClient.class);
+                intent.putExtra("from","Client");
+                startActivity(intent);
+            }
+        });
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

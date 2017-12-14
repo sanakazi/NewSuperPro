@@ -55,11 +55,11 @@ public class BaseFragment extends Fragment implements OnClickListener, OnChecked
 
 
    //--------------------------------------commented by sana-------------------------------------------------------------------
-      /*  ((ActivityMainOwner) activity).setLiveFragment(this);
-        ((ActivityMainOwner) activity).changeHeaderButton(false);
-        ((ActivityMainOwner) activity).showHideNotificationButton(true);
-        ((ActivityMainOwner) activity).showHIdeSliderButton(true);
-        ((ActivityMainOwner) activity).showHIdeSearchButton(true);*/
+      /*  ((ActivityMainTeam) activity).setLiveFragment(this);
+        ((ActivityMainTeam) activity).changeHeaderButton(false);
+        ((ActivityMainTeam) activity).showHideNotificationButton(true);
+        ((ActivityMainTeam) activity).showHIdeSliderButton(true);
+        ((ActivityMainTeam) activity).showHIdeSearchButton(true);*/
         //------------------------------------------------------------------------------
     }
 

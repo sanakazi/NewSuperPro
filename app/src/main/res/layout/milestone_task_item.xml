@@ -44,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/milestone_name"
             android:layout_marginLeft="@dimen/dimen_5"
             android:gravity="center"
             android:text="Ongoing "
@@ -75,9 +76,10 @@
 
             <com.superapp.custom.CircularNetworkImageView
                 android:id="@+id/img_client"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/small_profile"
+                android:layout_marginRight="@dimen/dimen_10"/>
 
             <TextView
                 android:gravity="center"
@@ -105,8 +107,8 @@
 
             <ImageView
                 android:id="@+id/img_call"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
                 android:src="@mipmap/call"
                 android:layout_alignParentRight="true"/>
 

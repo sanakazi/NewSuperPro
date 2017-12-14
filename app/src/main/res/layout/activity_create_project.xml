@@ -65,7 +65,7 @@
                             android:paddingLeft="@dimen/dimen_7"
                             android:text="Profession"
                             android:textColor="@color/txt_header2"
-                            android:textSize="@dimen/txt_15" />
+                            android:textSize="@dimen/label_size" />
 
                         <Spinner
                             android:id="@+id/spinner_profession"
@@ -84,13 +84,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/profession_layout"
-                        android:layout_marginBottom="@dimen/dimen_10">
+                        android:layout_marginBottom="@dimen/dimen_10"
+                        android:textColorHint="@color/txt_header2">
 
                         <android.support.design.widget.TextInputEditText
                             android:id="@+id/password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Project Name"
+                            android:paddingLeft="@dimen/dimen_7"
                             android:singleLine="true"
                             android:textColor="@color/txt_header1" />
 
@@ -101,10 +103,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/project_name"
-
+                        android:textColorHint="@color/txt_header2"
                         android:layout_marginBottom="@dimen/dimen_10">
 
                         <android.support.design.widget.TextInputEditText
+                            android:paddingLeft="@dimen/dimen_7"
                             android:id="@+id/edt_location"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -119,10 +122,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/location"
-
+                        android:textColorHint="@color/txt_header2"
                         android:layout_marginBottom="@dimen/dimen_10">
 
                         <android.support.design.widget.TextInputEditText
+                            android:paddingLeft="@dimen/dimen_7"
                             android:id="@+id/edt_project_type"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -156,7 +160,7 @@
                                 android:paddingLeft="@dimen/dimen_8"
                                 android:text="Start Date"
                                 android:textColor="@color/txt_header2"
-                                android:textSize="@dimen/txt_15" />
+                                android:textSize="@dimen/label_size" />
 
                             <Spinner
                                 android:id="@+id/spinner_startdate"
@@ -182,7 +186,7 @@
                                 android:paddingLeft="@dimen/dimen_8"
                                 android:text="Handover Date"
                                 android:textColor="@color/txt_header2"
-                                android:textSize="@dimen/txt_15" />
+                                android:textSize="@dimen/label_size" />
 
                             <Spinner
                                 android:id="@+id/spinner_handover_date"
@@ -201,10 +205,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/dates"
-
+                        android:textColorHint="@color/txt_header2"
                         android:layout_marginBottom="@dimen/dimen_10">
 
                         <android.support.design.widget.TextInputEditText
+                            android:paddingLeft="@dimen/dimen_7"
                             android:id="@+id/edt_budget"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -245,21 +250,54 @@
                       android:layout_marginBottom="@dimen/dimen_10">
 
                       <TextView
+                          android:paddingLeft="@dimen/dimen_8"
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
+                          android:layout_alignBottom="@id/btn_add_client"
                           android:text="CLIENT"
                           android:textColor="@color/txt_header2"
                           android:textAllCaps="true"
                           android:textSize="@dimen/label_size"/>
 
-                      <TextView
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
+                      <ImageView
+                          android:id="@+id/btn_add_client"
+                          android:layout_width="50dp"
+                          android:layout_height="30dp"
                           android:layout_alignParentRight="true"
-                          android:text="ADD"
-                          android:textColor="@color/txt_header2"
-                          android:textAllCaps="true"
-                          android:textSize="@dimen/label_size"/>
+                          android:src="@mipmap/add_createprojects"
+                          android:paddingLeft="@dimen/dimen_5"
+                          android:paddingTop="@dimen/dimen_5"
+                          android:paddingBottom="@dimen/dimen_5"
+                          android:paddingRight="@dimen/dimen_10"
+                       />
+
+                      <LinearLayout
+                          android:layout_marginTop="@dimen/dimen_10"
+                          android:layout_below="@id/btn_add_client"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
+
+                          <TextView
+                              android:id="@+id/label_client_name"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_marginBottom="@dimen/dimen_5"
+                              android:paddingLeft="@dimen/dimen_8"
+                              android:text="Name"
+                              android:textColor="@color/txt_header2"
+                              android:textSize="@dimen/label_size" />
+
+                          <Spinner
+                              android:id="@+id/spinner_client_name"
+                              android:layout_width="fill_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_below="@id/label_profession"
+                              android:layout_marginBottom="@dimen/dimen_15"
+                              android:prompt="@string/changepassword" />
+
+                      </LinearLayout>
+
                   </RelativeLayout>
 
 
@@ -278,10 +316,177 @@
                 android:background="@color/white"
                 app:cardElevation="@dimen/txt_2">
 
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Profession" />
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:paddingLeft="@dimen/dimen_5"
+                    android:paddingRight="@dimen/dimen_5"
+                    android:paddingTop="@dimen/dimen_10">
+
+
+                    <RelativeLayout
+                        android:id="@+id/add_team"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_10">
+
+                        <TextView
+                            android:paddingLeft="@dimen/dimen_8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/btn_add_team"
+                            android:text="TEAM MEMBER"
+                            android:textColor="@color/txt_header2"
+                            android:textAllCaps="true"
+                            android:textSize="@dimen/label_size"/>
+
+                        <ImageView
+                            android:id="@+id/btn_add_team"
+                            android:layout_width="50dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/add_createprojects"
+                            android:paddingLeft="@dimen/dimen_5"
+                            android:paddingTop="@dimen/dimen_5"
+                            android:paddingBottom="@dimen/dimen_5"
+                            android:paddingRight="@dimen/dimen_10"
+                            />
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/layout_team"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btn_add_team"
+                            android:layout_marginTop="@dimen/dimen_10">
+
+                            <TextView
+                                android:id="@+id/label_team"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_5"
+                                android:paddingLeft="@dimen/dimen_8"
+                                android:text="Name"
+                                android:textColor="@color/txt_header2"
+                                android:textSize="@dimen/label_size" />
+
+
+                            <ImageView
+                                android:id="@+id/select_team"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@mipmap/right_arrow"
+                                android:layout_below="@id/label_team"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/dimen_10"
+                                android:padding="@dimen/dimen_5"
+                                />
+
+                            <TextView
+
+                                android:id="@+id/spinner_team"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Chandrkant_sawant"
+                                android:paddingLeft="@dimen/dimen_8"
+                                android:layout_below="@id/label_team"
+                                android:layout_marginBottom="@dimen/dimen_5"
+                                android:prompt="@string/changepassword"
+                                />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minHeight="1dp"
+                                android:layout_below="@id/spinner_team"
+                                android:background="@color/txt_header2"
+                                android:layout_marginBottom="@dimen/dimen_10"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/l6"
+                            android:layout_below="@id/layout_team"
+                            android:layout_marginBottom="@dimen/dimen_10">
+
+
+                            <com.superapp.custom.CircularNetworkImageView
+                                android:id="@+id/client_img1"
+                                android:layout_marginTop="@dimen/dimen_2"
+                                android:layout_width="55dp"
+                                android:layout_height="50dp"
+                                android:padding="@dimen/dimen_10"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:src="@drawable/small_profile"
+                                android:layout_marginRight="@dimen/dimen_5"/>
+
+
+
+
+
+                            <com.superapp.custom.CircularNetworkImageView
+                                android:id="@+id/client_img2"
+                                android:layout_marginTop="@dimen/dimen_2"
+                                android:layout_width="55dp"
+                                android:layout_height="50dp"
+                                android:padding="@dimen/dimen_10"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:src="@drawable/client2"
+                                android:layout_marginRight="@dimen/dimen_5"/>
+
+
+
+
+
+                            <com.superapp.custom.CircularNetworkImageView
+                                android:id="@+id/client_img3"
+                                android:layout_marginTop="@dimen/dimen_2"
+                                android:layout_width="55dp"
+                                android:layout_height="50dp"
+                                android:padding="@dimen/dimen_10"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:src="@drawable/small_profile"
+                                android:layout_marginRight="@dimen/dimen_5"
+
+
+                                />
+
+
+
+                            <com.superapp.custom.CircularNetworkImageView
+                                android:id="@+id/btn_more"
+                                android:layout_marginTop="@dimen/dimen_2"
+                                android:layout_width="55dp"
+                                android:layout_height="50dp"
+                                android:padding="@dimen/dimen_10"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:src="@mipmap/more"
+
+
+                                />
+
+                        </LinearLayout>
+
+
+
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
 
 
             </android.support.v7.widget.CardView>
@@ -299,20 +504,23 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btn_done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card3"
+                android:background="@color/login_button_bg"
+                android:text="Done"
+                android:textAllCaps="true"
+                android:textColor="@color/login_text_color" />
+
 
         </RelativeLayout>
 
     </ScrollView>
 
 
-    <Button
-        android:id="@+id/btn_done"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/login_button_bg"
-        android:text="@string/subscribe"
-        android:textColor="@color/login_text_color" />
+
 
 
 </RelativeLayout>

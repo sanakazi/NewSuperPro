@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
   >
 
     <RelativeLayout
@@ -11,8 +12,14 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:layout_width="match_parent"
+            android:src="@mipmap/splash_bg"
+            android:scaleType="fitXY"
+            android:layout_height="match_parent" />
+
+        <ImageView
             android:layout_width="wrap_content"
-            android:src="@mipmap/login_logo"
+            android:src="@mipmap/splash_logo"
             android:layout_centerInParent="true"
             android:layout_height="wrap_content" />
 

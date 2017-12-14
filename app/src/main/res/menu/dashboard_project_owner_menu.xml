@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_add_task"
+        android:title="Add Task"
+        android:icon="@mipmap/add_task_contextual"/>
+
+    <item
+        android:id="@+id/menu_edit_project"
+        android:title="Edit Project"
+        android:icon="@mipmap/edit_project_contextual"/>
+
+    <item
+        android:id="@+id/menu_communication"
+        android:title="Communication"
+        android:icon="@mipmap/communication_contextual"/>
+
+    <item
+        android:id="@+id/menu_appointment"
+        android:title="Appointment"
+        android:icon="@mipmap/appointment_contextual"/>
+
+    <item
+        android:id="@+id/menu_transaction"
+        android:title="Transaction"
+        android:icon="@mipmap/transaction_contextual"/>
+
+    <item
+        android:id="@+id/menu_client_profile"
+        android:title="Client Profile"
+        android:icon="@mipmap/client_profile_contextual"/>
+
+
+    <item
+        android:id="@+id/menu_notepad"
+        android:title="Notepad"
+        android:icon="@mipmap/notepad"/>
+
+    <item
+        android:id="@+id/menu_reminder"
+        android:title="Reminder"
+        android:icon="@mipmap/reminder_contextual"/>
+
+    <item
+        android:id="@+id/menu_supervisor"
+        android:title="Supervisor Access"
+        android:icon="@mipmap/supervisor_contextual"/>
+
+    <item
+        android:id="@+id/menu_delete"
+        android:title="Delete"
+        android:icon="@mipmap/delete_contextual"/>
+
+
+
+</menu>

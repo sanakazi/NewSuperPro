@@ -35,7 +35,7 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="end"
                 android:layout_marginRight="@dimen/dimen_10"
-                android:src="@drawable/notifaction" />
+                android:src="@mipmap/notification" />
 
             <ImageView
                 android:id="@+id/filter"
@@ -73,13 +73,19 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+
+
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
-            android:src="@drawable/add" />
+            android:src="@mipmap/a_plus"
+            app:backgroundTint="@color/reg_appbar_bg"
+            app:fabSize="normal" />
+
 
     </FrameLayout>
 

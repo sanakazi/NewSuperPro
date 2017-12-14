@@ -6,17 +6,33 @@
     android:id="@+id/project_layout"
     >
 
-
-
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyler_view_overview"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/dimen_3"
-            android:layout_marginRight="@dimen/dimen_3"
-           />
+            android:layout_height="wrap_content">
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true">
+
+
+                        <include
+                            layout="@layout/projectdetail_overview_header_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimen_5"/>
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyler_view_overview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/header_view"
+                            android:background="@color/white"
+                            android:layout_margin="@dimen/dimen_10" />
+                </RelativeLayout>
+
+        </ScrollView>
 
 
 </RelativeLayout>

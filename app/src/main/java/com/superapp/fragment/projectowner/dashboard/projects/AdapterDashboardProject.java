@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +13,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.superapp.R;
-import com.superapp.activity.projectowner.ProjectDetailActivity;
+import com.superapp.activity.contextualmenus.clientprofile.ActivityClientProfile;
+import com.superapp.activity.contextualmenus.communication.ActivityCommunication;
+import com.superapp.activity.contextualmenus.notepad.ActivityNotepadLandingScreen;
+import com.superapp.activity.contextualmenus.task.ActivityCreateTask;
+import com.superapp.activity.contextualmenus.transaction.ActivityClientTransaction;
+import com.superapp.activity.projectowner.ActivityCreateProject;
+import com.superapp.activity.projectowner.ActivityProjectDetail;
+import com.superapp.activity.contextualmenus.appointment.ActivityAppointment;
 import com.superapp.custom.CircularTextView;
 import com.superapp.fragment.Model;
 
@@ -67,7 +73,7 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
         holder.project_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, ProjectDetailActivity.class);
+                Intent intent = new Intent(mContext, ActivityProjectDetail.class);
                 mContext.startActivity(intent);
             }
         });
@@ -78,7 +84,7 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
                 //creating a popup menu
                 PopupMenu popup = new PopupMenu(mContext, holder.edit);
                 //inflating menu from xml resource
-                popup.inflate(R.menu.options_menu);
+                popup.inflate(R.menu.dashboard_project_owner_menu);
 
                 // region Force icons to show
                 Object menuHelper;
@@ -87,7 +93,7 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
                     Field fMenuHelper = PopupMenu.class.getDeclaredField("mPopup");
                     fMenuHelper.setAccessible(true);
                     menuHelper = fMenuHelper.get(popup);
-                    argTypes = new Class[] { boolean.class };
+                    argTypes = new Class[]{boolean.class};
                     menuHelper.getClass().getDeclaredMethod("setForceShowIcon", argTypes).invoke(menuHelper, true);
                 } catch (Exception e) {
                     // Possible exceptions are NoSuchMethodError and NoSuchFieldError
@@ -102,20 +108,56 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
                     Log.w(TAG, "error forcing menu icons to show", e);
                     return;
                 }
-              //endregion
+                //endregion
                 //adding click listener
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
+                        Intent intent;
                         switch (item.getItemId()) {
-                            case R.id.menu1:
-                                //handle menu1 click
+                            case R.id.menu_add_task:
+                                intent  = new Intent(mContext, ActivityCreateTask.class);
+                                mContext.startActivity(intent);
+
                                 break;
-                            case R.id.menu2:
-                                //handle menu2 click
+                            case R.id.menu_edit_project:
+                                intent  = new Intent(mContext, ActivityCreateProject.class);
+                                mContext.startActivity(intent);
+
                                 break;
-                            case R.id.menu3:
-                                //handle menu3 click
+                            case R.id.menu_communication:
+                                intent  = new Intent(mContext, ActivityCommunication.class);
+                                mContext.startActivity(intent);
+                                break;
+
+                            case R.id.menu_appointment:
+                                intent  = new Intent(mContext, ActivityAppointment.class);
+                                mContext.startActivity(intent);
+
+                                break;
+                            case R.id.menu_transaction:
+                                intent  = new Intent(mContext, ActivityClientTransaction.class);
+                                mContext.startActivity(intent);
+
+                                break;
+                            case R.id.menu_client_profile:
+                                intent  = new Intent(mContext, ActivityClientProfile.class);
+                                mContext.startActivity(intent);
+
+                                break;
+
+                            case R.id.menu_notepad:
+                                intent  = new Intent(mContext, ActivityNotepadLandingScreen.class);
+                                mContext.startActivity(intent);
+                                break;
+                            case R.id.menu_reminder:
+
+                                break;
+                            case R.id.menu_supervisor:
+
+                                break;
+
+                            case R.id.menu_delete:
                                 break;
                         }
                         return false;
@@ -135,7 +177,7 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
     }
 
 
-    public class SingleItemRowHolder extends RecyclerView.ViewHolder  {
+    public class SingleItemRowHolder extends RecyclerView.ViewHolder {
 
         protected RelativeLayout project_layout;
         protected CircularTextView circularTextView1, circularTextView2;

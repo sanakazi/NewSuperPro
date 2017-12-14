@@ -52,4 +52,19 @@
         <item name="android:textColorHint">#ffffff</item>
     </style>
 
+    <style name="Theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/reg_appbar_bg</item>
+        <item name="colorPrimaryDark">@color/reg_appbar_color_primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+
+   <!-- Switch for navigation menu-->
+    <style name="SwitchCompatStyle" >
+        <item name="thumbTint">@color/switch_color</item>
+        <item name="trackTint">@color/switch_color</item>
+    </style>
+
 </resources>

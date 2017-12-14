@@ -22,6 +22,7 @@ public class FragmentProjectDetailOverview extends BaseFragment {
     RecyclerView recyler_view_overview;
     ArrayList<Model> itemsList;
     AdapterProjectDetailOverview adapterProjectDetailOverview;
+    CircularTextView circularTextView1, circularTextView2, circularTextView3, circularTextView4;
 
 
     @Override
@@ -40,6 +41,27 @@ public class FragmentProjectDetailOverview extends BaseFragment {
         recyler_view_overview = v.findViewById(R.id.recyler_view_overview);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         recyler_view_overview.setLayoutManager(llm);
+
+        circularTextView1 = v.findViewById(R.id.circularTextView1);
+        circularTextView2 = v.findViewById(R.id.circularTextView2);
+        circularTextView3 = v.findViewById(R.id.circularTextView3);
+        circularTextView4 = v.findViewById(R.id.circularTextView4);
+
+        circularTextView1.setStrokeWidth(1);
+        circularTextView1.setStrokeColor("#ffffff");
+        circularTextView1.setSolidColor("#3fb5d2");
+
+        circularTextView2.setStrokeWidth(1);
+        circularTextView2.setStrokeColor("#ffffff");
+        circularTextView2.setSolidColor("#6d53ce");
+
+        circularTextView3.setStrokeWidth(1);
+        circularTextView3.setStrokeColor("#ffffff");
+        circularTextView3.setSolidColor("#046cbd");
+
+        circularTextView4.setStrokeWidth(1);
+        circularTextView4.setStrokeColor("#ffffff");
+        circularTextView4.setSolidColor("#23a915");
 
     }
 

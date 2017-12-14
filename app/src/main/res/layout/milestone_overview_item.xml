@@ -10,7 +10,7 @@
         android:textAllCaps="true"
         android:textColor="@color/txt_header2"
         android:textSize="@dimen/txt_15"
-        android:text="UPCOMING TASKS"
+        android:text="TASKS"
         android:layout_marginTop="@dimen/dimen_10"
         android:layout_marginBottom="@dimen/dimen_10"
         android:visibility="gone"
@@ -47,6 +47,7 @@
             android:layout_marginTop="@dimen/dimen_10"
             android:layout_marginLeft="@dimen/dimen_5"
             android:layout_toRightOf="@id/circularTextView1"
+            android:layout_marginBottom="@dimen/dimen_5"
             android:gravity="center"
             android:text="Furniture "
             android:textColor="@color/font_blue"
@@ -58,8 +59,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="@dimen/dimen_5"
+            android:layout_marginBottom="@dimen/dimen_5"
             android:gravity="center"
             android:text="Ongoing "
+            android:layout_alignBottom="@id/milestone_name"
             android:textColor="@color/project_completed_status"
             android:textSize="@dimen/txt_15" />
 
@@ -70,14 +73,15 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/milestone_name"
             android:layout_below="@+id/milestone_name"
-            android:layout_marginRight="@dimen/dimen_5"
+            android:layout_marginRight="@dimen/dimen_15"
             android:gravity="left"
-            android:text="Total task"
+            android:text="Total task bfjkdbfjbdjfb  fjdjfkjdkfkd hdh fdfi dsfid hfhdfh  dfiohdsofsdf "
             android:textColor="@color/txt_header2"
             android:textSize="@dimen/tab_label" />
 
 
         <RelativeLayout
+            android:layout_marginTop="@dimen/dimen_10"
             android:layout_gravity="center"
             android:padding="@dimen/dimen_5"
             android:layout_width="match_parent"
@@ -88,9 +92,10 @@
 
             <com.superapp.custom.CircularNetworkImageView
                 android:id="@+id/img_client"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/small_profile"
+                android:layout_marginRight="@dimen/dimen_5"/>
 
             <TextView
                 android:gravity="center"
@@ -116,10 +121,11 @@
                 android:text="TEAM MEMBER"
                 android:textSize="@dimen/label_size"/>
 
+
             <ImageView
                 android:id="@+id/img_call"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
                 android:src="@mipmap/call"
                 android:layout_alignParentRight="true"/>
 

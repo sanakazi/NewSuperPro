@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.superapp.R;
-import com.superapp.activity.projectowner.MilestoneActivity;
+import com.superapp.activity.projectowner.ActivityMilestone;
 import com.superapp.custom.CircularTextView;
 import com.superapp.fragment.Model;
 
@@ -61,7 +61,7 @@ public class AdapterProjectDetailMilestone extends RecyclerView.Adapter<AdapterP
      holder.milestone_layout.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
-             Intent intent = new Intent(mContext, MilestoneActivity.class);
+             Intent intent = new Intent(mContext, ActivityMilestone.class);
              mContext.startActivity(intent);
          }
      });

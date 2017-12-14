@@ -46,8 +46,9 @@
                         android:padding="@dimen/dimen_10"
                         android:textStyle="bold"
                         android:textSize="@dimen/txt_12"
-                        android:textColor="@color/white"
+                        android:textColor="@color/txt_header1"
                         android:gravity="center"
+                        android:background="@mipmap/circles_dot_on_top_gray"
 
                         />
 
@@ -87,12 +88,13 @@
                         android:id="@+id/circularTextView2"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:text="3rd"
+                        android:text="3"
                         android:padding="@dimen/dimen_10"
                         android:textStyle="bold"
                         android:textColor="@color/project_completed_status"
                         android:textSize="@dimen/txt_12"
                         android:gravity="center"
+                        android:background="@mipmap/circles_dot_on_top_completed"
 
                         />
 

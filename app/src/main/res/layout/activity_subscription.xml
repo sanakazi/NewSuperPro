@@ -175,7 +175,7 @@
                             android:layout_width="wrap_content"
                             android:text="@string/rupees"
                             android:layout_gravity="center"
-                            android:textColor="@color/rupeetextcolor"
+                            android:textColor="@color/reg_appbar_bg"
                             android:layout_weight="0.9"
                             android:layout_height="wrap_content"/>
 
@@ -226,7 +226,7 @@
                             android:text="view features"
                             android:textColor="@android:color/white"
                             android:layout_weight="0.05"
-                            android:background="@color/viewfeatures"
+                            android:background="@color/reg_appbar_bg"
                             android:layout_height="wrap_content"/>
 
 

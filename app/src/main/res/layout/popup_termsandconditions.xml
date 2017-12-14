@@ -48,7 +48,7 @@
                     android:layout_height="40dp"
                     android:layout_gravity="right"
                     android:padding="12dp"
-                    android:src="@drawable/close" />
+                    android:src="@drawable/ic_launcher" />
             </LinearLayout>
 
             <ScrollView

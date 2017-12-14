@@ -138,13 +138,13 @@ public class AdapterMilestoneOverview extends RecyclerView.Adapter<AdapterMilest
                 circularTextView3 = itemView.findViewById(R.id.circularTextView3);
                 circularTextView4 = itemView.findViewById(R.id.circularTextView4);
 
-                circularTextView1.setStrokeWidth(1);
+               /*   circularTextView1.setStrokeWidth(1);
                 circularTextView1.setStrokeColor("#ffffff");
                 circularTextView1.setSolidColor("#3fb5d2");
 
-                circularTextView2.setStrokeWidth(1);
+              circularTextView2.setStrokeWidth(1);
                 circularTextView2.setStrokeColor("#ffffff");
-                circularTextView2.setSolidColor("#6d53ce");
+                circularTextView2.setSolidColor("#6d53ce");*/
 
                 circularTextView3.setStrokeWidth(1);
                 circularTextView3.setStrokeColor("#ffffff");

@@ -17,7 +17,7 @@ import com.superapp.activity.intro.ActivityIntroScreen;
 public class ScreenSlidePagerAdapter extends PagerAdapter {
 
 	private ActivityIntroScreen activity;
-	private int [] images={R.drawable.loginbg, R.drawable.loginbg, R.drawable.loginbg, R.drawable.loginbg, R.drawable.loginbg};
+	private int [] images={R.mipmap.welcomescreen_bg, R.mipmap.welcomescreen_bg, R.mipmap.welcomescreen_bg, R.mipmap.welcomescreen_bg, R.mipmap.welcomescreen_bg};
 	//private String [] sliderText={"ONE TICKET.\nLIMITLESS ACTIVITIES.","FITNESS WILL NEVER\nBE BORING AGAIN!","EASY AS A\nTAP","GOOD THINGS COME\nUNLIMITED!","EASY AS A\nTAP"};
 
 	private String[] sliderText={"Welcome","Western Classic","Sufi","Fusion","Spiritual"};

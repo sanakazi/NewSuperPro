@@ -11,7 +11,7 @@
         android:elevation="0dp"
         card_view:cardCornerRadius="@dimen/dimen_0">-->
 
-n        <RelativeLayout
+       <RelativeLayout
             android:id="@+id/milestone_layout"
             android:layout_gravity="center"
             android:padding="@dimen/dimen_5"
