@@ -1,6 +1,8 @@
-package com.superapp.activity.projectowner;
-
-import android.media.Image;
+package com.superapp.activity.dashboard.projectowner;
+/**
+ * Created by Sana Kazi
+ */
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,26 +15,26 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.superapp.R;
-import com.superapp.fragment.projectowner.projectdetail.milestone.FragmentProjectDetailMilestone;
-import com.superapp.fragment.projectowner.projectdetail.overview.FragmentProjectDetailOverview;
-import com.superapp.fragment.projectowner.projectdetail.team.FragmentProjectDetailTeam;
+import com.superapp.activity.contextualmenus.task.ActivityCreateTask;
+import com.superapp.fragment.projectowner.milestone.overview.FragmentMilestoneOverview;
+import com.superapp.fragment.projectowner.milestone.task.FragmentMilestoneTask;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityProjectDetail extends AppCompatActivity {
-    private static final String TAG = ActivityProjectDetail.class.getSimpleName();
+public class ActivityMilestone extends AppCompatActivity {
+    private static final String TAG = ActivityMilestone.class.getSimpleName();
     Toolbar toolbar;
     public FloatingActionButton fab;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_project_detail);
+        setContentView(R.layout.activity_milestone);
         init();
         setAsAction();
         setupViewPager(viewPager);
@@ -41,25 +43,37 @@ public class ActivityProjectDetail extends AppCompatActivity {
     private void init() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("SuperApp");
+        getSupportActionBar().setTitle("Milestone");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        fab =findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
     }
+
     private void setAsAction() {
 
 
-     //   fab.setRippleColor(getResources().getColor(R.color.floatingButtonColor));
+        //     fab.setRippleColor(getResources().getColor(R.color.floatingButtonColor));
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /*if (getLiveFragment() != null)
                 getLiveFragment().onFloatingButtonClick();*/
-                Log.w(TAG,"You clicked from" +    viewPager.getCurrentItem() );
+                Log.w(TAG, "You clicked from" + viewPager.getCurrentItem());
+                Intent intent;
+                switch (viewPager.getCurrentItem()) {
+                    case 0:
+                        intent = new Intent(ActivityMilestone.this,ActivityCreateTask.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(ActivityMilestone.this,ActivityCreateTask.class);
+                        startActivity(intent);
+                        break;
+                }
 
             }
         });
@@ -69,11 +83,12 @@ public class ActivityProjectDetail extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new FragmentProjectDetailOverview(), "OVERVIEW");
-        adapter.addFrag(new FragmentProjectDetailMilestone(), "MILESTONE");
-        adapter.addFrag(new FragmentProjectDetailTeam(), "TEAM");
+        adapter.addFrag(new FragmentMilestoneOverview(), "OVERVIEW");
+        adapter.addFrag(new FragmentMilestoneTask(), "TASK");
+
         viewPager.setAdapter(adapter);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -114,4 +129,7 @@ public class ActivityProjectDetail extends AppCompatActivity {
             return mFragmentTitleList.get(position);
         }
     }
+
+
 }
+

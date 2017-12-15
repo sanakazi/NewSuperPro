@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".activity.projectowner.ActivityMainOwner">
+    tools:context=".activity.ActivityMain">
 
 
     <android.support.design.widget.AppBarLayout
@@ -28,8 +28,8 @@
 
             <ImageView
                 android:id="@+id/notification"
-                android:layout_width="30dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
@@ -37,13 +37,28 @@
                 android:layout_marginRight="@dimen/dimen_10"
                 android:src="@mipmap/notification" />
 
+
+            <TextView
+                android:id="@+id/notification_no"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="end"
+                android:layout_marginRight="9dp"
+                android:layout_marginTop="19dp"
+                android:gravity="center"
+                android:text="3"
+                android:textSize="10sp"
+                android:visibility="gone"
+                android:background="@drawable/notification_box"/>
+
             <ImageView
                 android:id="@+id/filter"
-                android:layout_width="30dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="end"
-                android:layout_marginRight="@dimen/dimen_10"
+                android:layout_marginRight="@dimen/dimen_20"
                 android:layout_toLeftOf="@id/notification"
                 android:src="@mipmap/filter_actionbar" />
 

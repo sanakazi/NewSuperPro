@@ -1,5 +1,9 @@
-package com.superapp.activity.projectowner;
+package com.superapp.activity;
+/**
+ * Created by Sana Kazi
+ */
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -25,27 +29,31 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.superapp.R;
 import com.superapp.activity.base.BaseAppCompatActivity;
+import com.superapp.activity.dashboard.projectowner.ActivityAddClient;
+import com.superapp.activity.dashboard.projectowner.ActivityCreateProject;
 import com.superapp.activity.sidemenu.ActivityAllProjects;
 import com.superapp.activity.sidemenu.ActivityEditProfile;
 import com.superapp.activity.sidemenu.ActivityFeedback;
-import com.superapp.custom.DividerItemDecoration;
 import com.superapp.fragment.projectowner.dashboard.clients.FragmentDashboardClient;
 import com.superapp.fragment.projectowner.dashboard.projects.FragmentDashboardProject;
 import com.superapp.fragment.projectowner.dashboard.team.FragmentDashboardTeam;
+import com.superapp.utils.PrefSetup;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityMainOwner extends BaseAppCompatActivity {
-    private static final String TAG = ActivityMainOwner.class.getSimpleName();
+public class ActivityMain extends BaseAppCompatActivity {
+    private static final String TAG = ActivityMain.class.getSimpleName();
     ActionBarDrawerToggle toggle;
     private boolean mToolBarNavigationListenerIsRegistered = false;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView mRecyclerView;
     RecyclerView.Adapter mAdapter;
+    private ImageView notification;
     DrawerLayout drawer;
     public int row_index = 1;
     Toolbar toolbar;
@@ -54,12 +62,14 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
     private ViewPager viewPager;
     private static int expanded_item = 0;
     final String TITLES[] = {"Home", "All Projects", "Settings", "Coach marks", "Share/Invite friends", "Rate us on Playstore", "Help & Support", "Feedback", "Legal", "Logout"};
-    final int IMAGES[] = {R.mipmap.all_projects_sidemenu, R.mipmap.all_projects_sidemenu, R.mipmap.settings_sidemenu, R.mipmap.coach_marks_sidemenu, R.mipmap.share_sidemenu, R.mipmap.rate_sidemenu, R.mipmap.help_sidemenu, R.mipmap.feedback_sidemenu, R.mipmap.legal_sidemenu, R.mipmap.logout_sidemenu};
+    final int IMAGES[] = {R.mipmap.home, R.mipmap.all_projects_sidemenu, R.mipmap.settings_sidemenu, R.mipmap.coach_marks_sidemenu, R.mipmap.share_sidemenu, R.mipmap.rate_sidemenu, R.mipmap.help_sidemenu, R.mipmap.feedback_sidemenu, R.mipmap.legal_sidemenu, R.mipmap.logout_sidemenu};
     private int[] tabIcons = {
             R.mipmap.clients_tabbar,
             R.mipmap.projects_tabbar,
             R.mipmap.team_tabbar
     };
+     String loginType = PrefSetup.getInstance().getUserLoginType();
+  //  String loginType = "d";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +78,13 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
         init();
         setAsAction();
         setupViewPager(viewPager);
-        setupTabIcons();
+
+        if (loginType.equals("d"))
+            setupTabIcons();
+        else
+
+            tabLayout.setVisibility(View.GONE);
+
 
     }
 
@@ -86,7 +102,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
         ));*/
 
      /*   RecyclerView.ItemDecoration itemDecoration = new
-                DividerItemDecoration(ActivityMainOwner.this, DividerItemDecoration.VERTICAL_LIST);
+                DividerItemDecoration(ActivityMain.this, DividerItemDecoration.VERTICAL_LIST);
         mRecyclerView.addItemDecoration(itemDecoration);*/
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -94,6 +110,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        notification = findViewById(R.id.notification);
     }
 
     private void setAsAction() {
@@ -142,7 +159,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
         });
 
 
-        mAdapter = new DrawerAdapter(ActivityMainOwner.this, TITLES, IMAGES, "NAME", "EMAIL", 1);
+        mAdapter = new DrawerAdapter(ActivityMain.this, TITLES, IMAGES, "NAME", "EMAIL", 1);
         mRecyclerView.setAdapter(mAdapter);
 
 
@@ -157,17 +174,22 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                 switch (viewPager.getCurrentItem()) {
 
                     case 0:
-                        intent = new Intent(ActivityMainOwner.this, ActivityAddClient.class);
+                        if(loginType.equals("d"))
+                        {
+                        intent = new Intent(ActivityMain.this, ActivityAddClient.class);
                         intent.putExtra("from", "Client");
-                        startActivity(intent);
+                        startActivity(intent);}
+                        else {
+                            Toast.makeText(ActivityMain.this,"Please subscribe",Toast.LENGTH_SHORT).show();
+                        }
                         break;
                     case 1:
-                        intent = new Intent(ActivityMainOwner.this, ActivityCreateProject.class);
+                        intent = new Intent(ActivityMain.this, ActivityCreateProject.class);
                         startActivity(intent);
 
                         break;
                     case 2:
-                        intent = new Intent(ActivityMainOwner.this, ActivityAddClient.class);
+                        intent = new Intent(ActivityMain.this, ActivityAddClient.class);
                         intent.putExtra("from", "Team");
                         startActivity(intent);
                         break;
@@ -175,15 +197,25 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
 
             }
         });
-
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityMain.this,ActivityNotification.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new FragmentDashboardClient(), "CLIENTS");
-        adapter.addFrag(new FragmentDashboardProject(), "PROJECTS");
-        adapter.addFrag(new FragmentDashboardTeam(), "TEAM");
+        if (loginType.equals("d")) {
+            adapter.addFrag(new FragmentDashboardClient(), "CLIENTS");
+            adapter.addFrag(new FragmentDashboardProject(), "PROJECTS");
+            adapter.addFrag(new FragmentDashboardTeam(), "TEAM");
+        } else if (loginType.equals("c")||loginType.equals("w")){
+            adapter.addFrag(new FragmentDashboardProject(), "PROJECTS");
+        }
         viewPager.setAdapter(adapter);
     }
 
@@ -243,7 +275,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                     drawer.closeDrawer(GravityCompat.START);
                 }
 
-                intent = new Intent(ActivityMainOwner.this, ActivityAllProjects.class);
+                intent = new Intent(ActivityMain.this, ActivityAllProjects.class);
                 startActivity(intent);
 
 
@@ -278,7 +310,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.closeDrawer(GravityCompat.START);
                 }
-                intent = new Intent(ActivityMainOwner.this, ActivityFeedback.class);
+                intent = new Intent(ActivityMain.this, ActivityFeedback.class);
                 startActivity(intent);
                 break;
 
@@ -434,6 +466,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
         @Override
         public void onBindViewHolder(final ViewHolder holder, final int position) {
 
+
             if (holder.Holderid == 1) {
 
                 if (position == 4) {
@@ -460,6 +493,8 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
             } else if (holder.Holderid == 2) {
                 holder.txt_main.setText(mNavTitles[position - 1]);
 
+                holder.txt_main.setTextColor(getResources().getColor(R.color.white));
+
                 Log.w(TAG, "expanded_item is " + expanded_item);
                 holder.main_l.setVisibility(View.GONE);
 
@@ -481,7 +516,7 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
                                     if (row_index == position) {
                                     }
                                     holder.txt_main.setTextColor(getResources().getColor(R.color.white));
-                                    Intent intent = new Intent(ActivityMainOwner.this, ActivityEditProfile.class);
+                                    Intent intent = new Intent(ActivityMain.this, ActivityEditProfile.class);
                                     startActivity(intent);
                                     onNavigationItemClick(position);
                                 }
@@ -565,25 +600,3 @@ public class ActivityMainOwner extends BaseAppCompatActivity {
 
 }
 
-//-----------------------commented by sana-------------------------------------------
-//---------------------------------------------------------
-
-/* private void setupTabIcons() {
-
-        LinearLayout tabOne = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        TextView tabone_text = (TextView)tabOne.findViewById(R.id.tab_text) ;
-        tabone_text.setText("CLIENTS");
-        tabLayout.getTabAt(0).setCustomView(tabOne);
-
-     //   TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        LinearLayout tabTwo = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        TextView tabtwo_text = (TextView)tabTwo.findViewById(R.id.tab_text) ;
-        tabtwo_text.setText("PROJECT OWNER");
-        tabLayout.getTabAt(1).setCustomView(tabTwo);
-
-        LinearLayout tabThree = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        TextView tabThree_text = (TextView)tabThree.findViewById(R.id.tab_text) ;
-        tabThree_text.setText("TEAM");
-      //  tabThree.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.user, 0, 0);
-        tabLayout.getTabAt(2).setCustomView(tabThree);
-    }*/

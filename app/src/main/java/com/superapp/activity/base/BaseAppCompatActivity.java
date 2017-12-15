@@ -1,5 +1,7 @@
 package com.superapp.activity.base;
-
+/**
+ * Created by Sana Kazi
+ */
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;

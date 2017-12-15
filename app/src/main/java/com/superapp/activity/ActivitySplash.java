@@ -8,11 +8,12 @@ import android.view.WindowManager;
 
 import com.superapp.R;
 import com.superapp.activity.base.BaseAppCompatActivity;
-import com.superapp.activity.login.ActivityLogin;
-import com.superapp.activity.projectowner.ActivityMainOwner;
+import com.superapp.activity.intro.ActivityIntroScreen;
 import com.superapp.utils.PrefSetup;
 
 public class ActivitySplash extends BaseAppCompatActivity {
+    Intent intent;
+    private static final String TAG = ActivitySplash.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +45,16 @@ public class ActivitySplash extends BaseAppCompatActivity {
     };
 
     private void openNextActivity() {
-        Intent intent;
+
         if (PrefSetup.getInstance().getUserId() > 0) {
-            intent = new Intent(this, ActivityMainOwner.class);
+            intent = new Intent(this, ActivityMain.class);
+
         } else {
-            intent = new Intent(this, ActivityLogin.class);
+            intent = new Intent(this, ActivityIntroScreen.class);
         }
         startActivity(intent);
         finish();
     }
+
+
 }

@@ -17,7 +17,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.superapp.ApplicationContext;
 import com.superapp.R;
 import com.superapp.activity.ActivityAdminNotification;
-import com.superapp.activity.projectowner.ActivityMainOwner;
+import com.superapp.activity.ActivityMain;
 import com.superapp.activity.base.ErrorType;
 import com.superapp.beans.NotificationBean;
 import com.superapp.database.DBHelper;
@@ -113,7 +113,7 @@ public class FirebaseMessageReceive extends FirebaseMessagingService {
                 builder.setContentIntent(contentIntent);
 
             } else {
-                Intent intent = new Intent(this, ActivityMainOwner.class);
+                Intent intent = new Intent(this, ActivityMain.class);
                 NOTIFICATION_ID = 1;
 
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

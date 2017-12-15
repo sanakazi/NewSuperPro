@@ -1,5 +1,7 @@
-package com.superapp.activity.projectowner;
-
+package com.superapp.activity.dashboard.projectowner;
+/**
+ * Created by Sana Kazi
+ */
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -17,15 +18,18 @@ import com.superapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityCreateProject extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private static final String TAG = ActivityCreateProject.class.getSimpleName();
+public class ActivityAddClient  extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private static final String TAG = ActivityAddClient.class.getSimpleName();
     Toolbar toolbar;
-    ImageView btn_add_client;
-    Spinner spinner_profession,spinner_startdate,spinner_handover_date;
+    Spinner spinner_country;
+    Intent intent;
+    private static String from;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_project);
+        setContentView(R.layout.activity_add_client);
+        intent = getIntent();
+        from = intent.getStringExtra("from");
         init();
         setAsAction();
 
@@ -35,19 +39,15 @@ public class ActivityCreateProject extends AppCompatActivity implements AdapterV
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Create Project");
+        if(from.equals("Client"))
+        getSupportActionBar().setTitle("Add Client");
+        else if(from.equals("Team"))
+            getSupportActionBar().setTitle("Add Team");
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        spinner_profession = findViewById(R.id.spinner_profession);
-        spinner_profession.setOnItemSelectedListener(this);
-
-        spinner_startdate = findViewById(R.id.spinner_startdate);
-        spinner_startdate.setOnItemSelectedListener(this);
-
-        spinner_handover_date = findViewById(R.id.spinner_handover_date);
-        spinner_handover_date.setOnItemSelectedListener(this);
-
-        btn_add_client = findViewById(R.id.btn_add_client);
+        spinner_country = findViewById(R.id.spinner_country);
+        spinner_country.setOnItemSelectedListener(this);
 
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
@@ -64,12 +64,11 @@ public class ActivityCreateProject extends AppCompatActivity implements AdapterV
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-     //   dataAdapter.setDropDownViewResource(R.layout.createproject_spinner_item);
+        //   dataAdapter.setDropDownViewResource(R.layout.createproject_spinner_item);
 
         // attaching data adapter to spinner
-        spinner_profession.setAdapter(dataAdapter);
-        spinner_startdate.setAdapter(dataAdapter);
-        spinner_handover_date.setAdapter(dataAdapter);
+        spinner_country.setAdapter(dataAdapter);
+
     }
 
     @Override
@@ -86,17 +85,7 @@ public class ActivityCreateProject extends AppCompatActivity implements AdapterV
     }
 
 
-    private void setAsAction() {
-
-        btn_add_client.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityCreateProject.this,ActivityAddClient.class);
-                intent.putExtra("from","Client");
-                startActivity(intent);
-            }
-        });
-    }
+    private void setAsAction() {}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

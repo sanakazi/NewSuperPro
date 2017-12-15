@@ -13,16 +13,19 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.superapp.R;
+import com.superapp.activity.dashboard.client.projectoverview.ActivityProjectOverviewClient;
 import com.superapp.activity.contextualmenus.clientprofile.ActivityClientProfile;
 import com.superapp.activity.contextualmenus.communication.ActivityCommunication;
 import com.superapp.activity.contextualmenus.notepad.ActivityNotepadLandingScreen;
 import com.superapp.activity.contextualmenus.task.ActivityCreateTask;
-import com.superapp.activity.contextualmenus.transaction.ActivityClientTransaction;
-import com.superapp.activity.projectowner.ActivityCreateProject;
-import com.superapp.activity.projectowner.ActivityProjectDetail;
+import com.superapp.activity.contextualmenus.transaction.ActivityTransaction;
+import com.superapp.activity.dashboard.projectowner.ActivityCreateProject;
+import com.superapp.activity.dashboard.projectowner.ActivityProjectDetail;
 import com.superapp.activity.contextualmenus.appointment.ActivityAppointment;
+import com.superapp.activity.dashboard.team.projectoverview.ActivityProjectOverviewTeam;
 import com.superapp.custom.CircularTextView;
 import com.superapp.fragment.Model;
+import com.superapp.utils.PrefSetup;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -37,7 +40,8 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
     private Context mContext;
     private static final String TAG = AdapterDashboardProject.class.getSimpleName();
     //  ItemClickListener mListener;
-
+ String loginType = PrefSetup.getInstance().getUserLoginType();
+   // String loginType = "d";
 
     public interface ItemClickListener {
         void ItemClick(String fruitName);
@@ -70,11 +74,23 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
             }
         });*/
 
-        holder.project_layout.setOnClickListener(new View.OnClickListener() {
+        if (loginType.equals("w"))
+            holder.edit.setVisibility(View.INVISIBLE);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, ActivityProjectDetail.class);
-                mContext.startActivity(intent);
+
+                if (loginType.equals("d")) {
+                    Intent intent = new Intent(mContext, ActivityProjectDetail.class);
+                    mContext.startActivity(intent);
+                } else if (loginType.equals("c")) {
+                    Intent intent = new Intent(mContext, ActivityProjectOverviewClient.class);
+                    mContext.startActivity(intent);
+                } else if (loginType.equals("w")) {
+                    Intent intent = new Intent(mContext, ActivityProjectOverviewTeam.class);
+                    mContext.startActivity(intent);
+                }
             }
         });
 
@@ -84,7 +100,11 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
                 //creating a popup menu
                 PopupMenu popup = new PopupMenu(mContext, holder.edit);
                 //inflating menu from xml resource
-                popup.inflate(R.menu.dashboard_project_owner_menu);
+                if (loginType.equals("d")) {
+                    popup.inflate(R.menu.dashboard_project_owner_menu);
+                } else if (loginType.equals("c")) {
+                    popup.inflate(R.menu.dashboard_project_client_menu);
+                }
 
                 // region Force icons to show
                 Object menuHelper;
@@ -114,40 +134,42 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         Intent intent;
+
+
                         switch (item.getItemId()) {
                             case R.id.menu_add_task:
-                                intent  = new Intent(mContext, ActivityCreateTask.class);
+                                intent = new Intent(mContext, ActivityCreateTask.class);
                                 mContext.startActivity(intent);
 
                                 break;
                             case R.id.menu_edit_project:
-                                intent  = new Intent(mContext, ActivityCreateProject.class);
+                                intent = new Intent(mContext, ActivityCreateProject.class);
                                 mContext.startActivity(intent);
 
                                 break;
                             case R.id.menu_communication:
-                                intent  = new Intent(mContext, ActivityCommunication.class);
+                                intent = new Intent(mContext, ActivityCommunication.class);
                                 mContext.startActivity(intent);
                                 break;
 
                             case R.id.menu_appointment:
-                                intent  = new Intent(mContext, ActivityAppointment.class);
+                                intent = new Intent(mContext, ActivityAppointment.class);
                                 mContext.startActivity(intent);
 
                                 break;
                             case R.id.menu_transaction:
-                                intent  = new Intent(mContext, ActivityClientTransaction.class);
+                                intent = new Intent(mContext, ActivityTransaction.class);
                                 mContext.startActivity(intent);
 
                                 break;
                             case R.id.menu_client_profile:
-                                intent  = new Intent(mContext, ActivityClientProfile.class);
+                                intent = new Intent(mContext, ActivityClientProfile.class);
                                 mContext.startActivity(intent);
 
                                 break;
 
                             case R.id.menu_notepad:
-                                intent  = new Intent(mContext, ActivityNotepadLandingScreen.class);
+                                intent = new Intent(mContext, ActivityNotepadLandingScreen.class);
                                 mContext.startActivity(intent);
                                 break;
                             case R.id.menu_reminder:
@@ -160,6 +182,8 @@ public class AdapterDashboardProject extends RecyclerView.Adapter<AdapterDashboa
                             case R.id.menu_delete:
                                 break;
                         }
+
+
                         return false;
                     }
                 });

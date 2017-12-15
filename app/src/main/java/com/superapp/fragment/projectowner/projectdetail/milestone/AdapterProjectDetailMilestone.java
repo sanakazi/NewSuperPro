@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.superapp.R;
-import com.superapp.activity.projectowner.ActivityMilestone;
+import com.superapp.activity.dashboard.projectowner.ActivityMilestone;
 import com.superapp.custom.CircularTextView;
 import com.superapp.fragment.Model;
 

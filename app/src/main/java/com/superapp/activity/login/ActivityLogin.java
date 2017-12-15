@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.TextInputLayout;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -18,7 +19,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.superapp.R;
 import com.superapp.activity.base.BaseAppCompatActivity;
 import com.superapp.activity.base.ErrorType;
-import com.superapp.activity.projectowner.ActivityMainOwner;
+import com.superapp.activity.ActivityMain;
 import com.superapp.activity.registration.ActivityRegistration;
 import com.superapp.utils.PrefSetup;
 import com.superapp.utils.Utilities;
@@ -36,6 +37,7 @@ public class ActivityLogin extends BaseAppCompatActivity /*implements INavigatio
     TextView registernow,forgotpass;
     Handler handler;
     TextInputLayout usernameInputLayout,passwordInputLayout;
+    private static final String TAG = ActivityLogin.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,7 +119,7 @@ public class ActivityLogin extends BaseAppCompatActivity /*implements INavigatio
 
     private boolean validateFields()
     {
-        if (username.getText().toString().length() != 10)
+        if (TextUtils.isEmpty(username.getText().toString().trim()))
         {
             usernameInputLayout.setError(getString(R.string.invalidMobileNo));
             return false;
@@ -143,7 +145,7 @@ public class ActivityLogin extends BaseAppCompatActivity /*implements INavigatio
 
 
 
-
+//region commented
 
 /*
 
@@ -278,6 +280,8 @@ public class ActivityLogin extends BaseAppCompatActivity /*implements INavigatio
         });
     }*/
 
+   //endregion
+
     private void doLogin() {
         // Call web service to login user.
         JSONObject jsonObject = new JSONObject();
@@ -308,7 +312,6 @@ public class ActivityLogin extends BaseAppCompatActivity /*implements INavigatio
         if (Interactor.RequestCode_Login == requestCode) {
             if (responsePacket.getErrorCode() == 0 && responsePacket.getUserDetail() != null) {
                 // Execute the task which is required on success.
-
                 PrefSetup.getInstance().setUserDetail(responsePacket.getUserDetail());
                 navigateToHome();
             } else {
@@ -320,7 +323,9 @@ public class ActivityLogin extends BaseAppCompatActivity /*implements INavigatio
     public void navigateToHome() {
         //TODO open Home activity when login successfully or any other condition
 
-        Intent intent = new Intent(ActivityLogin.this, ActivityMainOwner.class);
+        Log.w(TAG,"login type is " + PrefSetup.getInstance().getUserLoginType());
+
+        Intent  intent = new Intent(this, ActivityMain.class);
         finish();
         startActivity(intent);
     }

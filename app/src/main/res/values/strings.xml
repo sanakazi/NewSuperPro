@@ -91,4 +91,15 @@
     <string name="notes">Notes</string>
     <string name="sketch">Sketch</string>
 
+   <!-- communication and transaction-->
+    <string name="amount">Amount</string>
+    <string name="addmoney">Add Money</string>
+    <string name="amtspenton">Amount spent on</string>
+    <string name="category">Category</string>
+    <string name="spentamt">Spent Amount</string>
+    <string name="uploadpic">Upload picture of material or bill</string>
+    <string name="imgdocs">Images and Documents</string>
+    <string name="sendrequest">SEND REQUEST</string>
+    <string name="request">Request</string>
+
 </resources>

@@ -23,22 +23,31 @@
             android:name=".activity.ActivitySplash"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/SplashTheme" >
+
+
+              <intent-filter>
+               <action android:name="android.intent.action.MAIN" />
+
+               <category android:name="android.intent.category.LAUNCHER" />
+           </intent-filter>
+
+        </activity>
         <activity
             android:name=".activity.intro.ActivityIntroScreen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.projectowner.ActivityMainOwner"
+            android:name=".activity.ActivityMain"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden">
-            <intent-filter>
+          <!--  <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".activity.registration.ActivityRegistration"
@@ -48,7 +57,8 @@
         <activity
             android:name=".activity.login.ActivityLogin"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme" />
+            android:theme="@style/Theme" >
+        </activity>
         <activity
             android:name=".activity.login.ActivityChangePassword"
             android:hardwareAccelerated="true"
@@ -68,25 +78,25 @@
         <activity android:name=".activity.subscription.ActivitySubscription" />
         <activity android:name=".activity.subscription.ActivitySubscriptionDetail" />
         <activity
-            android:name=".activity.projectowner.ActivityProjectDetail"
+            android:name=".activity.dashboard.projectowner.ActivityProjectDetail"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".activity.projectowner.ActivityMilestone"
+            android:name=".activity.dashboard.projectowner.ActivityMilestone"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".activity.projectowner.ActivityCreateProject"
+            android:name=".activity.dashboard.projectowner.ActivityCreateProject"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".activity.projectowner.ActivityAddClient"
+            android:name=".activity.dashboard.projectowner.ActivityAddClient"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
@@ -115,24 +125,24 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".activity.projectowner.ActivityTaskOverview" />
+        <activity android:name=".activity.dashboard.projectowner.ActivityTaskOverview" />
         <activity
-            android:name=".activity.contextualmenus.transaction.ActivityClientTransaction"
+            android:name=".activity.contextualmenus.transaction.ActivityTransaction"
             android:screenOrientation="portrait"
             android:theme="@style/Theme" />
         <activity
-            android:name=".activity.contextualmenus.transaction.ActivityRequestAmtDetail"
+            android:name=".activity.contextualmenus.transaction.ActivityClientAcceptRejectRequestAmtDetail"
             android:screenOrientation="portrait"
             android:theme="@style/Theme" />
         <activity
-            android:name=".activity.contextualmenus.transaction.ActivityExpenseAmtDetail"
+            android:name=".activity.contextualmenus.transaction.ActivityTransactionOverview"
             android:screenOrientation="portrait"
             android:theme="@style/Theme" />
 
         <!-- for client -->
 
         <activity
-            android:name=".activity.client.dashboard.ActivityMainClient"
+            android:name=".activity.dashboard.client.dashboard.ActivityMainClient"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -147,8 +157,8 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".activity.client.projectoverview.ActivityProjectOverviewClient" />
-        <activity android:name=".activity.team.projectoverview.ActivityProjectOverviewTeam" />
+        <activity android:name=".activity.dashboard.client.projectoverview.ActivityProjectOverviewClient" />
+        <activity android:name=".activity.dashboard.team.projectoverview.ActivityProjectOverviewTeam" />
         <activity android:name=".activity.contextualmenus.clientprofile.ActivityClientProfile" />
         <activity android:name=".activity.sidemenu.ActivityAllProjects" />
         <activity
@@ -160,15 +170,15 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme" />
         <activity
-            android:name=".activity.team.projectoverview.ActivityTeamTaskStatus"
+            android:name=".activity.dashboard.team.projectoverview.ActivityTeamTaskStatus"
             android:screenOrientation="portrait"
             android:theme="@style/Theme" />
         <activity
-            android:name=".activity.team.projectoverview.ActivityTeamTaskUpdate"
+            android:name=".activity.dashboard.team.projectoverview.ActivityTeamTaskUpdate"
             android:screenOrientation="portrait"
             android:theme="@style/Theme" />
         <activity
-            android:name=".activity.contextualmenus.communication.ActivityClientApprovalDetails"
+            android:name=".activity.contextualmenus.communication.ActivityClientApprovalNewStatus"
             android:screenOrientation="portrait"
             android:theme="@style/Theme"
             android:windowSoftInputMode="adjustResize" />
@@ -193,6 +203,28 @@
         <activity android:name=".activity.sidemenu.ActivityEditProfile" />
         <activity android:name=".activity.contextualmenus.clientprofile.ActivityEditClientProfile" />
         <activity android:name=".activity.sidemenu.ActivityFeedback"></activity>
+
+        <activity
+            android:name=".activity.contextualmenus.transaction.ActivityTransactionAddRequestedMoney"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".activity.contextualmenus.transaction.ActivityTransactionAddExpense"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+        <activity
+            android:name=".activity.contextualmenus.communication.ActivityCommunicationApprovalOverview"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme">
+        </activity>
+        <activity android:name=".activity.contextualmenus.communication.ActivityCommunicationClarificationStatus"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme">
+        </activity>
+
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.projectowner.ActivityProjectDetail">
+    tools:context=".activity.dashboard.projectowner.ActivityProjectDetail">
 
 
         <android.support.design.widget.AppBarLayout
@@ -26,7 +26,7 @@
 
 
                 <ImageView
-                    android:id="@+id/edit"
+                    android:id="@+id/context_menu_project"
                     android:layout_width="30dp"
                     android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
@@ -34,8 +34,9 @@
                     android:layout_centerInParent="true"
                     android:layout_gravity="end"
                     android:layout_marginRight="@dimen/dimen_10"
-                    android:src="@drawable/ic_more_vert_black_24dp"
-                    android:tint="@color/txt_header2"/>
+                    android:src="@mipmap/contextualmenu_card"
+                    android:tint="@color/white"
+                   />
 
 
 

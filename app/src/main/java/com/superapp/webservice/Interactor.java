@@ -5,8 +5,8 @@ import org.json.JSONObject;
 public interface Interactor {
 
     // For Testing Purpose
-    String BASE_API_URL = "http://139.59.88.3/super_app/supperappapi/"; // Test URL
-    String BASE_URL = BASE_API_URL + "idesigner.php/";
+    String BASE_API_URL = "http://192.168.169.167/supperappapi/"; // Test URL
+    String BASE_URL = BASE_API_URL + "idesignerv22.php/";
 
     // For Live
   //  String BASE_API_URL = "https://www.superapp.co.in/supperappapi/"; // Live Development URL
