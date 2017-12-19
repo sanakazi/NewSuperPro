@@ -2,9 +2,11 @@ package com.superapp.activity.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +23,7 @@ import org.json.JSONObject;
 public class ActivityChangePassword extends BaseAppCompatActivity {
 
     Toolbar toolbar;
-    EditText newpassword,confirmpassword;
+    TextInputEditText newpassword,confirmpassword;
     Button submit;
     String username;
     TextInputLayout textinputpass,textinputconfirmpass;
@@ -36,6 +38,11 @@ public class ActivityChangePassword extends BaseAppCompatActivity {
     private void initView()
     {
         toolbar=findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(getResources().getString(R.string.changepassword));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         newpassword=findViewById(R.id.password);
         confirmpassword=findViewById(R.id.confirmpass);
         submit=findViewById(R.id.submit);
@@ -46,21 +53,12 @@ public class ActivityChangePassword extends BaseAppCompatActivity {
         {
             username=intent.getStringExtra("username");
         }
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(getResources().getString(R.string.changepassword));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
     }
 
     private void setUpAsAction()
     {
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                onBackPressed();
-            }
-        });
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -143,5 +141,18 @@ public class ActivityChangePassword extends BaseAppCompatActivity {
             if (responsePacket.getErrorCode() != 410)
                 makeToast(responsePacket.getMessage());
         }
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //finish();
+                onBackPressed();
+                //  overridePendingTransition(0, R.anim.push_right);
+                break;
+        }
+        return true;
     }
 }

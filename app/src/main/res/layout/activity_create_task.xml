@@ -67,7 +67,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/profession_layout"
                         android:textColorHint="@color/txt_header2"
-                        android:layout_marginBottom="@dimen/dimen_10">
+                        android:layout_marginBottom="@dimen/dimen_10"
+                        android:theme="@style/TextLabel">
 
                         <android.support.design.widget.TextInputEditText
                             android:id="@+id/edt_task_name"
@@ -76,7 +77,9 @@
                             android:hint="Task Name"
                             android:paddingLeft="@dimen/dimen_8"
                             android:singleLine="true"
-                            android:textColor="@color/txt_header1" />
+                            android:textSize="@dimen/txt_16"
+                            android:textColor="@color/txt_header1"
+                            android:imeOptions="actionDone"/>
 
                     </android.support.design.widget.TextInputLayout>
 
@@ -113,7 +116,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/milestone_layout"
                         android:textColorHint="@color/txt_header2"
-                        android:layout_marginBottom="@dimen/dimen_10">
+                        android:layout_marginBottom="@dimen/dimen_10"
+                        android:theme="@style/TextLabel">
 
                         <android.support.design.widget.TextInputEditText
                             android:id="@+id/edt_location"
@@ -122,7 +126,8 @@
                             android:paddingLeft="@dimen/dimen_8"
                             android:hint="Kitchen"
                             android:singleLine="true"
-                            android:textColor="@color/txt_header1" />
+                            android:textColor="@color/txt_header1"
+                            android:imeOptions="actionDone"/>
 
                     </android.support.design.widget.TextInputLayout>
 
@@ -174,7 +179,7 @@
                             android:src="@mipmap/add_createprojects"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:layout_marginRight="@dimen/dimen_10"
+
                             android:padding="@dimen/dimen_5"/>
 
                     </RelativeLayout>
@@ -199,13 +204,13 @@
 
                         <ImageView
                             android:id="@+id/select_team"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
+                            android:layout_width="30dp"
+                            android:layout_height="22dp"
+                            android:padding="@dimen/dimen_5"
                             android:src="@mipmap/right_arrow"
                             android:layout_below="@id/label_team"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="@dimen/dimen_10"
-                            android:padding="@dimen/dimen_5"
+
                             />
 
                         <TextView
@@ -217,6 +222,7 @@
                             android:layout_below="@id/label_team"
                             android:layout_marginBottom="@dimen/dimen_5"
                             android:prompt="@string/changepassword"
+                            android:layout_toLeftOf="@id/select_team"
                             />
 
 
@@ -295,7 +301,7 @@
                             android:layout_height="30dp"
                             android:src="@mipmap/upload_icon"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="@dimen/dimen_10"
+
                             android:layout_marginBottom="@dimen/dimen_5"
                             android:padding="@dimen/dimen_5"
                             android:layout_below="@id/label_upload"
@@ -458,7 +464,8 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/layout_end_dates"
                             android:textColorHint="@color/txt_header2"
-                            android:layout_marginBottom="@dimen/dimen_10">
+                            android:layout_marginBottom="@dimen/dimen_10"
+                            android:theme="@style/TextLabel">
 
                             <android.support.design.widget.TextInputEditText
                                 android:id="@+id/edt_desc"
@@ -467,7 +474,8 @@
                                 android:hint="Description"
                                 android:paddingLeft="@dimen/dimen_8"
                                 android:singleLine="true"
-                                android:textColor="@color/txt_header1" />
+                                android:textColor="@color/txt_header1"
+                                android:imeOptions="actionDone"/>
 
                         </android.support.design.widget.TextInputLayout>
 

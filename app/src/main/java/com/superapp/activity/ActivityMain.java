@@ -35,6 +35,7 @@ import com.superapp.R;
 import com.superapp.activity.base.BaseAppCompatActivity;
 import com.superapp.activity.dashboard.projectowner.ActivityAddClient;
 import com.superapp.activity.dashboard.projectowner.ActivityCreateProject;
+import com.superapp.activity.login.ActivityChangePassword;
 import com.superapp.activity.sidemenu.ActivityAllProjects;
 import com.superapp.activity.sidemenu.ActivityEditProfile;
 import com.superapp.activity.sidemenu.ActivityFeedback;
@@ -299,6 +300,8 @@ public class ActivityMain extends BaseAppCompatActivity {
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.closeDrawer(GravityCompat.START);
                 }
+                intent = new Intent(ActivityMain.this, ActivityChangePassword.class);
+                startActivity(intent);
                 break;
             case 6:
                 if (drawer.isDrawerOpen(GravityCompat.START)) {

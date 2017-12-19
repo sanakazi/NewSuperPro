@@ -10,6 +10,7 @@
 
 
     <style name="AppTheme.NoActionBar">
+        <item name="colorPrimaryDark">@color/reg_appbar_color_primary_dark</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -65,6 +66,22 @@
     <style name="SwitchCompatStyle" >
         <item name="thumbTint">@color/switch_color</item>
         <item name="trackTint">@color/switch_color</item>
+    </style>
+
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/Reg_hint_color</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/RegEdittextLine</item>
+        <item name="colorControlNormal">@color/RegEdittextLine</item>
+        <item name="colorControlActivated">@color/Reg_hint_color</item>
+        <item name="colorControlHighlight">@color/RegEdittextLine</item>
+        <item name="android:textCursorDrawable">@drawable/edittext_cursor_color</item>
+        <item name="android:textSize">@dimen/txt_16</item>
+
+
+
     </style>
 
 </resources>

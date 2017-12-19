@@ -101,5 +101,7 @@
     <string name="imgdocs">Images and Documents</string>
     <string name="sendrequest">SEND REQUEST</string>
     <string name="request">Request</string>
+    <string name="requestto">Request to</string>
+    <string name="selectcountry">Select Country</string>
 
 </resources>

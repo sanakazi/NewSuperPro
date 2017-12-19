@@ -2,6 +2,7 @@ package com.superapp.activity.dashboard.projectowner;
 /**
  * Created by Sana Kazi
  */
+
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -19,7 +20,12 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 
 import com.superapp.R;
+import com.superapp.activity.contextualmenus.appointment.ActivityAppointment;
+import com.superapp.activity.contextualmenus.clientprofile.ActivityClientProfile;
+import com.superapp.activity.contextualmenus.communication.ActivityCommunication;
+import com.superapp.activity.contextualmenus.notepad.ActivityNotepadLandingScreen;
 import com.superapp.activity.contextualmenus.task.ActivityCreateTask;
+import com.superapp.activity.contextualmenus.transaction.ActivityTransaction;
 import com.superapp.fragment.projectowner.projectdetail.milestone.FragmentProjectDetailMilestone;
 import com.superapp.fragment.projectowner.projectdetail.overview.FragmentProjectDetailOverview;
 import com.superapp.fragment.projectowner.projectdetail.team.FragmentProjectDetailTeam;
@@ -55,11 +61,10 @@ public class ActivityProjectDetail extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        context_menu_project=findViewById(R.id.context_menu_project);
+        context_menu_project = findViewById(R.id.context_menu_project);
 
 
     }
-
 
 
     private void setAsAction() {
@@ -84,7 +89,7 @@ public class ActivityProjectDetail extends AppCompatActivity {
                         break;
                     case 2:
                         intent = new Intent(ActivityProjectDetail.this, ActivityAddClient.class);
-                        intent.putExtra("from","Team");
+                        intent.putExtra("from", "Team");
                         startActivity(intent);
                         break;
                 }
@@ -131,16 +136,56 @@ public class ActivityProjectDetail extends AppCompatActivity {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         Intent intent;
+
+
                         switch (item.getItemId()) {
-                            case R.id.menu_edit_appointment:
-                                 /*   intent  = new Intent(mContext, ActivityCreateTask.class);
-                                    mContext.startActivity(intent);*/
+                            case R.id.menu_add_task:
+                                intent = new Intent(ActivityProjectDetail.this, ActivityCreateTask.class);
+                                startActivity(intent);
+
+                                break;
+                            case R.id.menu_edit_project:
+                                intent = new Intent(ActivityProjectDetail.this, ActivityCreateProject.class);
+                                startActivity(intent);
+
+                                break;
+                            case R.id.menu_communication:
+                                intent = new Intent(ActivityProjectDetail.this, ActivityCommunication.class);
+                                startActivity(intent);
                                 break;
 
+                            case R.id.menu_appointment:
+                                intent = new Intent(ActivityProjectDetail.this, ActivityAppointment.class);
+                                startActivity(intent);
+
+                                break;
+                            case R.id.menu_transaction:
+                                intent = new Intent(ActivityProjectDetail.this, ActivityTransaction.class);
+                                startActivity(intent);
+
+                                break;
+                            case R.id.menu_client_profile:
+                                intent = new Intent(ActivityProjectDetail.this, ActivityClientProfile.class);
+                                startActivity(intent);
+
+                                break;
+
+                            case R.id.menu_notepad:
+                                intent = new Intent(ActivityProjectDetail.this, ActivityNotepadLandingScreen.class);
+                                startActivity(intent);
+                                break;
+                            case R.id.menu_reminder:
+
+                                break;
+                            case R.id.menu_supervisor:
+
+                                break;
 
                             case R.id.menu_delete:
                                 break;
                         }
+
+
                         return false;
                     }
                 });
@@ -148,7 +193,6 @@ public class ActivityProjectDetail extends AppCompatActivity {
             }
         });//closing the setOnClickListener method
     }
-
 
 
     private void setupViewPager(ViewPager viewPager) {

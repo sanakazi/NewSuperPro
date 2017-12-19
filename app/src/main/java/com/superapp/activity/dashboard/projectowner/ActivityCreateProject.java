@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.superapp.R;
+import com.superapp.activity.contextualmenus.ActivitySelectTeam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ import java.util.List;
 public class ActivityCreateProject extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String TAG = ActivityCreateProject.class.getSimpleName();
     Toolbar toolbar;
-    ImageView btn_add_client;
+    ImageView btn_add_client,select_team,btn_more;
     Spinner spinner_profession,spinner_startdate,spinner_handover_date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class ActivityCreateProject extends AppCompatActivity implements AdapterV
         spinner_handover_date.setOnItemSelectedListener(this);
 
         btn_add_client = findViewById(R.id.btn_add_client);
+        select_team=findViewById(R.id.select_team);
+        btn_more=findViewById(R.id.btn_more);
 
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
@@ -63,8 +66,7 @@ public class ActivityCreateProject extends AppCompatActivity implements AdapterV
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-     //   dataAdapter.setDropDownViewResource(R.layout.createproject_spinner_item);
+        //   dataAdapter.setDropDownViewResource(R.layout.createproject_spinner_item);
 
         // attaching data adapter to spinner
         spinner_profession.setAdapter(dataAdapter);
@@ -78,7 +80,7 @@ public class ActivityCreateProject extends AppCompatActivity implements AdapterV
         String item = parent.getItemAtPosition(position).toString();
 
         // Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+      //  Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
 
     public void onNothingSelected(AdapterView<?> arg0) {
@@ -93,6 +95,21 @@ public class ActivityCreateProject extends AppCompatActivity implements AdapterV
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityCreateProject.this,ActivityAddClient.class);
                 intent.putExtra("from","Client");
+                startActivity(intent);
+            }
+        });
+
+        select_team.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityCreateProject.this,ActivitySelectTeam.class);
+                startActivity(intent);
+            }
+        });
+        btn_more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityCreateProject.this,ActivitySelectTeam.class);
                 startActivity(intent);
             }
         });
